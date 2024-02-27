@@ -1,9 +1,9 @@
 {
   "name": "merchi_sdk_js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
-  "main": "dist/merchi.js",
-  "module": "dist/merchi.js",
+  "main": "src/merchi.js",
+  "module": "src/merchi.js",
   "license": "GPL-3.0-only",
   "files": [
     "src/"
