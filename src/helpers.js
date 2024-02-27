@@ -21,7 +21,7 @@ export function isUndefinedOrNull(x) {
 }
 
 export function getGlobal() {
-    if (isBrowser || isJsDom) {
+    if (typeof window !== 'undefined' && (isBrowser || isJsDom)) {
         return window;
     }
     return global;
