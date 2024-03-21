@@ -40,6 +40,7 @@ export function Product() {
     addPropertyTo(this, 'productType');
     addPropertyTo(this, 'description');
     addPropertyTo(this, 'notes');
+    addPropertyTo(this, 'spProductId');
     addPropertyTo(this, 'shopifyProductId');
     addPropertyTo(this, 'minimum');
     addPropertyTo(this, 'minimumPerGroup');

@@ -85,6 +85,8 @@ export function Domain() {
     addPropertyTo(this, 'deploymentMessage');
     addPropertyTo(this, 'deploymentKey');
 
+    addPropertyTo(this, 'scalablePressApiKey');
+
     this.create = function (success, error, embed, as_domain) {
         var data = serialise(this),
             self = this;
