@@ -3,6 +3,7 @@ import { addPropertyTo } from './model.js';
 import { DiscountGroup } from './discount_group.js';
 import { MerchiFile } from './merchi_file.js';
 import { VariationField } from './variation_field.js';
+import { DraftTemplate } from './draft_template.js';
 
 export function VariationFieldsOption() {
     this.resource = '/variationFieldOptions';
@@ -20,7 +21,9 @@ export function VariationFieldsOption() {
     addPropertyTo(this, 'variationUnitCost');
     addPropertyTo(this, 'variationUnitCostDiscountGroup', DiscountGroup);
     addPropertyTo(this, 'linkedFile', MerchiFile);
-    addPropertyTo(this, 'variationField', VariationField)
+    addPropertyTo(this, 'variationField', VariationField);
+    addPropertyTo(this, 'draftTemplates', DraftTemplate);
+
 
     this.totalCost = function (quantity) {
         var total = this.variationCost() ?
