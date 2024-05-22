@@ -13,6 +13,7 @@ export function AutomaticPaymentRelationship() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'creationDate');
     addPropertyTo(this, 'stripeCustomerId');
+    addPropertyTo(this, 'allowPostPayment');
     addPropertyTo(this, 'companyCustomer', Company);
     addPropertyTo(this, 'companySupplier', Company);
 
