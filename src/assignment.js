@@ -28,6 +28,7 @@ export function Assignment() {
     addPropertyTo(this, 'supplyJob', Job);
     addPropertyTo(this, 'supplier', User);
     addPropertyTo(this, 'quote', Quote);
+    addPropertyTo(this, 'quoteTotalCost');
     addPropertyTo(this, 'shipment', Shipment);
     addPropertyTo(this, 'supplyDomain', SupplyDomain);
     addPropertyTo(this, 'comments', ProductionComment);
