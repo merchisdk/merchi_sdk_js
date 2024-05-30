@@ -73,6 +73,7 @@ export function Job() {
     addPropertyTo(this, 'productionShippingAddress', Address);
     addPropertyTo(this, 'supplyAssignment', Assignment);
     addPropertyTo(this, 'supplyJob', Job);
+    addPropertyTo(this, 'supplyQuoteTotalCost');
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'cost');
     addPropertyTo(this, 'taxAmount');
