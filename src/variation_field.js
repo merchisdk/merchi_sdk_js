@@ -15,6 +15,7 @@ export function VariationField() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'fieldType');
     addPropertyTo(this, 'name');
+    addPropertyTo(this, 'instructions');
     addPropertyTo(this, 'position');
     addPropertyTo(this, 'placeholder');
     addPropertyTo(this, 'defaultValue');
