@@ -17,7 +17,6 @@ export function DiscountGroup() {
     addPropertyTo(this, 'discountType');
     addPropertyTo(this, 'discounts');
     addPropertyTo(this, 'name');
-    addPropertyTo(this, 'code');
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'product', Product);
 }
