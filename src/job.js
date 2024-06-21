@@ -27,6 +27,7 @@ import { MatchingInventory } from './matching_inventory.js';
 import { User } from './user.js';
 import { Variation } from './variation.js';
 import { VariationsGroup } from './variations_group.js';
+import { Item } from './item.js';
 import { JobComment } from './job_comment.js';
 import { InternalTag } from './internal_tag.js';
 
@@ -58,6 +59,7 @@ export function Job() {
     addPropertyTo(this, 'draftComments', DraftComment);
     addPropertyTo(this, 'comments', JobComment);
     addPropertyTo(this, 'invoice', Invoice);
+    addPropertyTo(this, 'items', Item);
     addPropertyTo(this, 'shipment', Shipment);
     addPropertyTo(this, 'client', User);
     addPropertyTo(this, 'clientEmail', EmailAddress);

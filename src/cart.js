@@ -7,6 +7,7 @@ import { CartShipmentGroup } from './cart_shipment_group.js';
 import { Company } from './company.js';
 import { Domain } from './domain.js';
 import { Invoice } from './invoice.js';
+import { Item } from './item.js';
 import { Shipment } from './shipment.js';
 import { User } from './user.js';
 
@@ -30,6 +31,7 @@ export function Cart() {
     addPropertyTo(this, 'cartItemsSubtotalCost');
     addPropertyTo(this, 'cartItemsTaxAmount');
     addPropertyTo(this, 'cartItemsTotalCost');
+    addPropertyTo(this, 'discountItems', Item);
     addPropertyTo(this, 'shipmentSubtotalCost');
     addPropertyTo(this, 'shipmentTaxAmount');
     addPropertyTo(this, 'shipmentTotalCost');
