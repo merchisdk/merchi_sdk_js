@@ -502,6 +502,10 @@ export function getList(resource, success, error, parameters, withUpdates) {
         request.query().add(
             'exclude_domains', parameters.excludeDomains);
     }
+    if (notEmpty(parameters.excludeJobs)) {
+        request.query().add(
+            'exclude_jobs', parameters.excludeJobs);
+    }
     if (notEmpty(parameters.includeOnly)) {
         request.query().add('include_only', parameters.includeOnly);
     }
