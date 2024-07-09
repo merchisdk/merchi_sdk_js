@@ -415,6 +415,9 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (notEmpty(parameters.relatedJob)) {
         request.query().add('related_job', parameters.relatedJob);
     }
+    if (notEmpty(parameters.relatedJobs)) {
+        request.query().add('related_jobs', parameters.relatedJobs);
+    }
     if (notEmpty(parameters.relatedProduct)) {
         request.query().add('related_product', parameters.relatedProduct);
     }
