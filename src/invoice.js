@@ -35,6 +35,7 @@ export function Invoice() {
     addPropertyTo(this, 'taxAmount');
     addPropertyTo(this, 'invoiceToken');
     addPropertyTo(this, 'canAutoPay');
+    addPropertyTo(this, 'discountedAmount');
     addPropertyTo(this, 'responsibleManager', User);
     addPropertyTo(this, 'creator', User);
     addPropertyTo(this, 'client', User);

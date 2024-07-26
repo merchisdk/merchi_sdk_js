@@ -27,6 +27,7 @@ export function Cart() {
     addPropertyTo(this, 'subtotalCost');
     addPropertyTo(this, 'taxAmount');
     addPropertyTo(this, 'totalCost');
+    addPropertyTo(this, 'discountedAmount');
     addPropertyTo(this, 'cartItems', CartItem);
     addPropertyTo(this, 'cartItemsSubtotalCost');
     addPropertyTo(this, 'cartItemsTaxAmount');
