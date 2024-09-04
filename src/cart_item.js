@@ -23,7 +23,7 @@ export function CartItem() {
     addPropertyTo(this, 'variations', Variation);
     addPropertyTo(this, 'variationsGroups', VariationsGroup);
     addPropertyTo(this, 'taxType', CountryTax);
-    addPropertyTo(this, 'tag', DomainTag);
+    addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'subtotalCost');
     addPropertyTo(this, 'totalCost');
 
