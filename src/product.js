@@ -91,6 +91,7 @@ export function Product() {
     addPropertyTo(this, 'allowAutomaticPaymentSupply');
     addPropertyTo(this, 'allowGroupBuy');
     addPropertyTo(this, 'allowPaymentUpfront');
+    addPropertyTo(this, 'allowAddToCart');
     addPropertyTo(this, 'allowQuotation');
     addPropertyTo(this, 'allowChainedInventoryCreation');
     addPropertyTo(this, 'allowClientDraftContribution');
