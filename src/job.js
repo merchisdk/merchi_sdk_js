@@ -61,12 +61,17 @@ export function Job() {
     addPropertyTo(this, 'invoice', Invoice);
     addPropertyTo(this, 'items', Item);
     addPropertyTo(this, 'shipment', Shipment);
+
     addPropertyTo(this, 'client', User);
+    addPropertyTo(this, 'clientBrowser');
+    addPropertyTo(this, 'clientDevice');
+    addPropertyTo(this, 'clientOs');
     addPropertyTo(this, 'clientEmail', EmailAddress);
     addPropertyTo(this, 'clientPhone', PhoneNumber);
     addPropertyTo(this, 'clientCompany', Company);
     addPropertyTo(this, 'clientCompanyEmail', EmailAddress);
     addPropertyTo(this, 'clientCompanyPhone', PhoneNumber);
+
     addPropertyTo(this, 'manager', User);
     addPropertyTo(this, 'designer', User);
     addPropertyTo(this, 'shipping', Address);
