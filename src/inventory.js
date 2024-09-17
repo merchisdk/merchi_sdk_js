@@ -4,6 +4,7 @@ import { addPropertyTo, serialise, fromJson, create, getOne, deleteOne,
 import { Address } from './address.js';
 import { InventoryUnitVariation } from './inventory_unit_variation.js';
 import { Product } from './product.js';
+import { InventoryGroup } from './inventory_group.js';
 
 export function Inventory() {
     this.resource = '/inventories';
@@ -14,6 +15,7 @@ export function Inventory() {
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'notes');
     addPropertyTo(this, 'quantity');
+    addPropertyTo(this, 'inventoryGroups', InventoryGroup)
     addPropertyTo(this, 'product', Product);
     addPropertyTo(this, 'address', Address);
     addPropertyTo(this, 'inventoryUnitVariations',

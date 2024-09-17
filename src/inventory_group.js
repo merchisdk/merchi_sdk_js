@@ -1,5 +1,6 @@
 import { generateUUID } from './uuid.js';
 import { addPropertyTo } from './model.js';
+import { Company } from './company.js';
 import { Inventory } from './inventories.js';
 import { Product } from './products.js';
 import { Job } from './jobs.js';
@@ -12,6 +13,7 @@ export function InventoryGroup() {
 
     addPropertyTo(this, 'archived');
     addPropertyTo(this, 'id');
+    addPropertyTo(this, 'company', Company);
     addPropertyTo(this, 'inventories', Inventory);
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'products', Product);
