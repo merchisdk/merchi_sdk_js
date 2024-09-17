@@ -1,7 +1,7 @@
 import { generateUUID } from './uuid.js';
 import { addPropertyTo } from './model.js';
 import { Company } from './company.js';
-import { Inventory } from './inventory';
+import { Inventory } from './inventory.js';
 import { Product } from './product.js';
 import { Job } from './job.js';
 import { VariationField } from './variation_field.js';
