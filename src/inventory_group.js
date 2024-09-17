@@ -1,9 +1,9 @@
 import { generateUUID } from './uuid.js';
 import { addPropertyTo } from './model.js';
 import { Company } from './company.js';
-import { Inventory } from './inventories.js';
-import { Product } from './products.js';
-import { Job } from './jobs.js';
+import { Inventory } from './inventory';
+import { Product } from './product.js';
+import { Job } from './job.js';
 import { VariationField } from './variation_field.js';
 
 export function InventoryGroup() {
