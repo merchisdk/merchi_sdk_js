@@ -3,6 +3,7 @@ import { fieldTypes } from './field_types.js';
 import { addPropertyTo } from './model.js';
 import { isUndefinedOrNull, clone } from './helpers.js';
 import { DiscountGroup } from './discount_group.js';
+import { InventoryGroup } from './inventory_group.js';
 import { VariationFieldsOption } from './variation_fields_option.js';
 import { Variation } from './variation.js';
 import { VariationOption } from './variation_option.js';
@@ -21,6 +22,7 @@ export function VariationField() {
     addPropertyTo(this, 'defaultValue');
     addPropertyTo(this, 'required');
     addPropertyTo(this, 'independent');
+    addPropertyTo(this, 'inventoryGroup', InventoryGroup);
     addPropertyTo(this, 'variationCost');
     addPropertyTo(this, 'variationCostDiscountGroup', DiscountGroup);
     addPropertyTo(this, 'variationUnitCost');
