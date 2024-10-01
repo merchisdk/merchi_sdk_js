@@ -13,6 +13,7 @@ import { DomainTag } from './domain_tag.js';
 import { DiscountGroup } from './discount_group.js';
 import { Domain } from './domain.js';
 import { Inventory } from './inventory.js';
+import { InventoryGroup } from './inventory_group.js';
 import { ShipmentMethod } from './shipment_method.js';
 import { VariationField } from './variation_field.js';
 import { VariationsGroup } from './variations_group.js';
@@ -76,6 +77,7 @@ export function Product() {
     addPropertyTo(this, 'suppliedByDomains', SupplyDomain);
     addPropertyTo(this, 'autoAssignProductionOnAction');
     addPropertyTo(this, 'supplyDomains', SupplyDomain);
+    addPropertyTo(this, 'inventoryGroup', InventoryGroup);
     addPropertyTo(this, 'images', MerchiFile);
     addPropertyTo(this, 'featureImage', MerchiFile);
     addPropertyTo(this, 'publicFiles', MerchiFile);
