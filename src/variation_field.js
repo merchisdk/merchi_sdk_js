@@ -23,6 +23,7 @@ export function VariationField() {
     addPropertyTo(this, 'required');
     addPropertyTo(this, 'independent');
     addPropertyTo(this, 'inventoryGroup', InventoryGroup);
+    addPropertyTo(this, 'linkedInventoryGroup', InventoryGroup);
     addPropertyTo(this, 'variationCost');
     addPropertyTo(this, 'variationCostDiscountGroup', DiscountGroup);
     addPropertyTo(this, 'variationUnitCost');
