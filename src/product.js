@@ -77,7 +77,7 @@ export function Product() {
     addPropertyTo(this, 'suppliedByDomains', SupplyDomain);
     addPropertyTo(this, 'autoAssignProductionOnAction');
     addPropertyTo(this, 'supplyDomains', SupplyDomain);
-    addPropertyTo(this, 'inventoryGroup', InventoryGroup);
+    addPropertyTo(this, 'inventoryGroups', InventoryGroup);
     addPropertyTo(this, 'images', MerchiFile);
     addPropertyTo(this, 'featureImage', MerchiFile);
     addPropertyTo(this, 'publicFiles', MerchiFile);
