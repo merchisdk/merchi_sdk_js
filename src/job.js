@@ -583,13 +583,13 @@ export function Job() {
         return assignment ? assignment.isUserSupplier(user) : false;
     }
 
-   this.tryDeduct = function (success, error) {
+   this.deduct = function (success, error) {
         var request = new Request(),
             data = serialise(this)[0],
             query = new Dictionary(),
             self = this;
         query.add('embed', JSON.stringify({inventory: {}}));
-        request.resource('/jobs/' + this.id() + '/deduct/');
+        request.resource('/jobs/' + this.id() + '/inventories_subtract/');
         request.method('POST');
         request.data().merge(data);
         request.query().merge(query);
