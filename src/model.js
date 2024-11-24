@@ -459,6 +459,9 @@ export function getList(resource, success, error, parameters, withUpdates) {
         request.query().add('query_string',
                             parameters.queryString);
     }
+    if (notEmpty(parameters.categories)) {
+        request.query().add('categories', parameters.categories);
+    }
     if (notEmpty(parameters.companyCustomerId)) {
         request.query().add('company_customer_id',
                             parameters.companyCustomerId);
