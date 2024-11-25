@@ -14,7 +14,7 @@ export function Category() {
     addPropertyTo(this, 'showPublic');
     addPropertyTo(this, 'showPublicSupplierResell');
     addPropertyTo(this, 'domain', Domain);
-    addPropertyTo(this, 'subCategories', Category);
+    addPropertyTo(this, 'subcategories', Category);
     addPropertyTo(this, 'parent', Category);
 
     this.create = function (success, error, embed, domainId) {
