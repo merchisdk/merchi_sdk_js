@@ -2,6 +2,7 @@ import { generateUUID } from './uuid.js';
 import { addPropertyTo, fromJson, serialise, create, enumerateFiles,
     getOne, deleteOne, fromJsonList, getList } from './model.js';
 import { Domain } from './domain.js';
+import { MerchiFile } from './merchi_file.js';
 
 export function Category() {
     this.resource = '/categories';
@@ -13,8 +14,9 @@ export function Category() {
     addPropertyTo(this, 'showDashboard');
     addPropertyTo(this, 'showPublic');
     addPropertyTo(this, 'showPublicSupplierResell');
+    addPropertyTo(this, 'image', MerchiFile);
     addPropertyTo(this, 'domain', Domain);
-    addPropertyTo(this, 'subCategories', Category);
+    addPropertyTo(this, 'subcategories', Category);
     addPropertyTo(this, 'parent', Category);
 
     this.create = function (success, error, embed, domainId) {
