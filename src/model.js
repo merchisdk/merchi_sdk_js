@@ -406,6 +406,9 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (notEmpty(parameters.dateTo)) {
         request.query().add('date_to', parameters.dateTo);
     }
+    if (parameters.descendants) {
+        request.query().add('descendants', parameters.descendants);
+    }
     if (notEmpty(parameters.relatedAssignment)) {
         request.query().add('related_assignment', parameters.relatedAssignment);
     }
