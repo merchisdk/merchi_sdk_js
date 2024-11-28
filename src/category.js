@@ -14,6 +14,7 @@ export function Category() {
     addPropertyTo(this, 'showDashboard');
     addPropertyTo(this, 'showPublic');
     addPropertyTo(this, 'showPublicSupplierResell');
+    addPropertyTo(this, 'descendant');
     addPropertyTo(this, 'image', MerchiFile);
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'subcategories', Category);
