@@ -386,6 +386,9 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (parameters.entityTypes) {
         request.query().add('entity_types', parameters.entityTypes);
     }
+    if (parameters.priceRange) {
+        request.query().add('product_range', parameters.priceRange);
+    }
     if (parameters.productTypes) {
         request.query().add('product_types', parameters.productTypes);
     }
@@ -496,6 +499,12 @@ export function getList(resource, success, error, parameters, withUpdates) {
     }
     if (parameters.tagNames) {
         request.query().add('tag_names', parameters.tagNames);
+    }
+    if (parameters.turnaroundTimeDays) {
+        request.query().add(
+            'turnaround_time_days',
+            parameters.turnaroundTimeDays
+        );
     }
     if (notEmpty(parameters.exclude)) {
         request.query().add('exclude', parameters.exclude);
