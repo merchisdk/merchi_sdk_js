@@ -33,6 +33,7 @@ export function User() {
     addPropertyTo(this, 'timezone');
     addPropertyTo(this, 'preferredLanguage');
     addPropertyTo(this, 'isSuperUser');
+    addPropertyTo(this, 'canEdit');
     addPropertyTo(this, 'systemRoles', SystemRole);
     addPropertyTo(this, 'enableCrashReports');
     addPropertyTo(this, 'enableClientEmails');
