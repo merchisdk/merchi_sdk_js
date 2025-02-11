@@ -21,6 +21,10 @@ productTypes.add(16, 'supply seller MOD(made on demand) cloned');
 productTypes.add(17, 'supplier to supplier resell MOD(made on demand)');
 productTypes.add(18, 'supplier resell cloned');
 productTypes.add(19, 'supply domain reference');
+productTypes.add(20, 'seller file download');
+productTypes.add(21, 'supplier mod supply chain request');
+productTypes.add(22, 'supplier supply chain request');
+productTypes.add(23, 'lead form');
 
 export const productTypesInts = new Dictionary();
 productTypes.each(function (key, value) {
