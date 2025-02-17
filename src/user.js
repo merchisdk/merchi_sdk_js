@@ -35,6 +35,7 @@ export function User() {
     addPropertyTo(this, 'isSuperUser');
     addPropertyTo(this, 'canEdit');
     addPropertyTo(this, 'systemRoles', SystemRole);
+    addPropertyTo(this, 'telegramUsername');
     addPropertyTo(this, 'enableCrashReports');
     addPropertyTo(this, 'enableClientEmails');
     addPropertyTo(this, 'enableInvoiceReminders');
