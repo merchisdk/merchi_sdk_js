@@ -37,6 +37,7 @@ export function Domain() {
     addPropertyTo(this, 'logoUrl');
     addPropertyTo(this, 'smsName');
     addPropertyTo(this, 'emailDomain');
+    addPropertyTo(this, 'telegramChatId');
     addPropertyTo(this, 'trackingCodeGoogleConversion');
     addPropertyTo(this, 'trackingCodeGoogleGlobal');
     addPropertyTo(this, 'qrShopQrCode');
