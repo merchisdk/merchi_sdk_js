@@ -34,6 +34,7 @@ export function Invoice() {
     addPropertyTo(this, 'subtotalCost');
     addPropertyTo(this, 'taxAmount');
     addPropertyTo(this, 'invoiceToken');
+    addPropertyTo(this, 'paymentUrl');
     addPropertyTo(this, 'canAutoPay');
     addPropertyTo(this, 'responsibleManager', User);
     addPropertyTo(this, 'creator', User);
