@@ -14,6 +14,7 @@ import { SupplyDomain } from './supply_domain.js';
 import { SeoDomainPage } from './seo_domain_page.js';
 import { User, Users } from './user.js';
 import { InternalTag } from './internal_tag.js';
+import { ShipmentMethod } from './shipment_method.js';
 
 export function Domain() {
     this.resource = '/domains';
@@ -45,6 +46,7 @@ export function Domain() {
     addPropertyTo(this, 'favicon', MerchiFile);
     addPropertyTo(this, 'company', Company);
     addPropertyTo(this, 'ownedBy', Company);
+    addPropertyTo(this, 'shipmentMethods', ShipmentMethod);
     addPropertyTo(this, 'accessibleClients', User);
     addPropertyTo(this, 'accessibleClientCompanies', Company);
     addPropertyTo(this, 'unltdAiApiOrganizationId');
