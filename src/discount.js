@@ -12,6 +12,7 @@ export function Discount() {
     addPropertyTo(this, 'code');
     addPropertyTo(this, 'usageLimit');
     addPropertyTo(this, 'isPercentage');
+    addPropertyTo(this, 'groupRestricted');
 
     this.discountedUnitCost = function (unitPrice) {
         var unitCost = unitPrice ? unitPrice : 0,
