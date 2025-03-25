@@ -4,6 +4,7 @@ import { Job } from './job.js';
 import { Product } from './product.js';
 import { MerchiFile } from './merchi_file.js';
 import { VariationFieldsOption } from './variation_fields_option.js';
+import { VariationField } from './variation_field.js';
 
 export function DraftTemplate() {
     this.resource = '/draft_comments';
@@ -13,7 +14,9 @@ export function DraftTemplate() {
     addPropertyTo(this, 'product', Product);
     addPropertyTo(this, 'file', MerchiFile);
     addPropertyTo(this, 'job', Job);
-    addPropertyTo(this, 'variationFieldOption', VariationFieldsOption);
+    addPropertyTo(this, 'selectedByVariationFieldOptions', VariationFieldsOption);
+    addPropertyTo(this, 'editedByVariationFields', VariationField);
+    addPropertyTo(this, 'draftPreviews', MerchiFile);
     addPropertyTo(this, 'date');
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'description');
