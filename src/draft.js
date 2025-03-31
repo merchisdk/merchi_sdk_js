@@ -5,6 +5,7 @@ import { Job } from './job.js';
 import { User } from './user.js';
 import { DraftComment } from './draft_comment.js';
 import { MerchiFile } from './merchi_file.js';
+import { DraftTemplate } from './draft_template.js';
 
 export function Draft() {
     this.resource = '/drafts';
@@ -15,6 +16,7 @@ export function Draft() {
     addPropertyTo(this, 'sharedWithJob', Job);
     addPropertyTo(this, 'designer', User);
     addPropertyTo(this, 'file', MerchiFile);
+    addPropertyTo(this, 'draftTemplates', DraftTemplate);
     addPropertyTo(this, 'date');
     addPropertyTo(this, 'accepted');
     addPropertyTo(this, 'changesRequested');
