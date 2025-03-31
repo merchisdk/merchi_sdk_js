@@ -13,10 +13,10 @@ export function DraftTemplate() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'product', Product);
     addPropertyTo(this, 'file', MerchiFile);
+    addPropertyTo(this, 'design', MerchiFile);
     addPropertyTo(this, 'job', Job);
     addPropertyTo(this, 'selectedByVariationFieldOptions', VariationFieldsOption);
     addPropertyTo(this, 'editedByVariationFields', VariationField);
-    addPropertyTo(this, 'draftPreviews', MerchiFile);
     addPropertyTo(this, 'date');
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'description');
