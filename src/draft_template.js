@@ -19,6 +19,7 @@ export function DraftTemplate() {
     addPropertyTo(this, 'editedByVariationFields', VariationField);
     addPropertyTo(this, 'date');
     addPropertyTo(this, 'name');
+    addPropertyTo(this, 'layerName');
     addPropertyTo(this, 'description');
     addPropertyTo(this, 'height');
     addPropertyTo(this, 'width');
