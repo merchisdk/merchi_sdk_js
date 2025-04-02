@@ -1,22 +1,16 @@
 import { addPropertyTo, serialise, create, enumerateFiles,
     fromJson } from './model.js';
-import { MerchiFile } from './merchi_file.js';
-import { Product } from './product.js';
-import { DraftPreviewLayer } from './draft_preview_layer.js';
+import { DraftPreview } from './draft_preview.js';
+import { DraftTemplate } from './draft_template.js';
 
-export function DraftPreview() {
+export function DraftPreviewLayer() {
     this.resource = '/draft_previews';
     this.json = 'draftPreview';
 
     addPropertyTo(this, 'id');
-    addPropertyTo(this, 'file', MerchiFile);
-    addPropertyTo(this, 'product', Product);
-    addPropertyTo(this, 'description');
-    addPropertyTo(this, 'name');
-    addPropertyTo(this, 'date');
-    addPropertyTo(this, 'height');
-    addPropertyTo(this, 'width');
-    addPropertyTo(this, 'draftPreviewLayers', DraftPreviewLayer);
+    addPropertyTo(this, 'layerName');
+    addPropertyTo(this, 'draftPreview', DraftPreview);
+    addPropertyTo(this, 'draftTemplate', DraftTemplate);
 
     this.create = function (options) {
         var data = serialise(this),

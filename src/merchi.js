@@ -38,6 +38,7 @@ import { DomainTag, DomainTags } from './domain_tag.js';
 import { DomainInvitation } from './domain_invitation.js';
 import { Draft, Drafts } from './draft.js';
 import { DraftPreview } from './draft_preview.js';
+import { DraftPreviewLayer } from './draft_preview_layer.js';
 import { DraftTemplate } from './draft_template.js';
 import { DraftComment } from './draft_comment.js';
 import { EnrolledDomain, EnrolledDomains } from './enrolled_domain.js';
@@ -915,6 +916,7 @@ export function merchi(backendUri, websocketUri) {
             'drafts': new Drafts(),
             'DraftComment': DraftComment,
             'DraftPreview': DraftPreview,
+            'DraftPreviewLayer': DraftPreviewLayer,
             'DraftTemplate': DraftTemplate,
             'ExchangeRate': ExchangeRate,
             'exchangeRates': new ExchangeRates(),
