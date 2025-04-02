@@ -5,6 +5,7 @@ import { Product } from './product.js';
 import { MerchiFile } from './merchi_file.js';
 import { VariationFieldsOption } from './variation_fields_option.js';
 import { VariationField } from './variation_field.js';
+import { DraftPreviewLayer } from './draft_preview_layer.js';
 
 export function DraftTemplate() {
     this.resource = '/draft_comments';
@@ -19,10 +20,10 @@ export function DraftTemplate() {
     addPropertyTo(this, 'editedByVariationFields', VariationField);
     addPropertyTo(this, 'date');
     addPropertyTo(this, 'name');
-    addPropertyTo(this, 'layerName');
     addPropertyTo(this, 'description');
     addPropertyTo(this, 'height');
     addPropertyTo(this, 'width');
+    addPropertyTo(this, 'draftPreviewLayer', DraftPreviewLayer);
 
     this.create = function (options) {
         var data = serialise(this),

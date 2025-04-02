@@ -1,6 +1,6 @@
 {
   "name": "merchi_sdk_js",
-  "version": "0.0.55",
+  "version": "0.0.56",
   "type": "module",
   "main": "src/merchi.js",
   "module": "src/merchi.js",
