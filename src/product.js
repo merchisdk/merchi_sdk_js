@@ -23,6 +23,7 @@ import { User } from './user.js';
 import { Job } from './job.js';
 import { SeoDomainPage } from './seo_domain_page.js';
 import { InternalTag } from './internal_tag.js';
+import { DraftPreview } from './draft_preview.js';
 
 export function Product() {
     this.resource = '/products';
@@ -108,6 +109,7 @@ export function Product() {
     addPropertyTo(this, 'taxType', CountryTax);
     addPropertyTo(this, 'defaultJob', Job);
     addPropertyTo(this, 'supplyChainRequestJobs', Job);
+    addPropertyTo(this, 'draftPreviews', DraftPreview);
     addPropertyTo(this, 'draftTemplates', DraftTemplate);
     addPropertyTo(this, 'shipmentMethods', ShipmentMethod);
     addPropertyTo(this, 'seoDomainPages', SeoDomainPage);
