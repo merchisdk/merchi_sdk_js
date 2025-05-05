@@ -584,10 +584,8 @@ export function merchi(backendUri, websocketUri) {
     }
 
     function getJobQuote(job, success, error) {
-        var slimProduct = new Product().id(job.product().id()),
-            slimJob = job.domain(new Domain()).product(slimProduct),
-            request = new Request(),
-            data = serialise(slimJob)[0];
+        var request = new Request(),
+            data = serialise(job, {}, '', [], {excludeOld: true});
         request.resource('/specialised-order-estimate/');
         request.method('POST');
         request.data().merge(data);
