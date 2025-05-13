@@ -4,6 +4,7 @@ import { addPropertyTo, serialise, fromJson, create,
 import { Cart } from './cart.js';
 import { CountryTax } from './country_tax.js';
 import { DomainTag } from './domain_tag.js';
+import { Draft } from './draft.js';
 import { Product } from './product.js';
 import { Variation } from './variation.js';
 import { VariationsGroup } from './variations_group.js';
@@ -24,6 +25,7 @@ export function CartItem() {
     addPropertyTo(this, 'variationsGroups', VariationsGroup);
     addPropertyTo(this, 'taxType', CountryTax);
     addPropertyTo(this, 'tags', DomainTag);
+    addPropertyTo(this, 'ownDrafts', Draft);
     addPropertyTo(this, 'subtotalCost');
     addPropertyTo(this, 'totalCost');
 
