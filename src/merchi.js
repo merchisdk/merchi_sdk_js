@@ -21,7 +21,6 @@ import {
     AutomaticPaymentRelationship,
     AutomaticPaymentRelationships,
 } from './automatic_payment_relationship.js';
-import { Backup, Backups } from './backup.js';
 import { Bank } from './bank.js';
 import { Category, Categories } from './category.js';
 import { Cart } from './cart.js';
@@ -962,8 +961,6 @@ export function merchi(backendUri, websocketUri) {
             'Assignments': new Assignments(),
             'File': MerchiFile,
             'files': new MerchiFiles(),
-            'Backup': Backup,
-            'backups': new Backups(),
             'removeUnstoredFiles': removeUnstoredFiles,
             'Shipment': Shipment,
             'shipments': new Shipments(),
