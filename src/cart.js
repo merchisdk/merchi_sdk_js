@@ -23,6 +23,7 @@ export function Cart() {
     addPropertyTo(this, 'client', User);
     addPropertyTo(this, 'clientCompany', Company);
     addPropertyTo(this, 'creationDate');
+    addPropertyTo(this, 'updated');
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'subtotalCost');
     addPropertyTo(this, 'taxAmount');
