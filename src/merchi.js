@@ -125,7 +125,7 @@ export function merchi(backendUri, websocketUri) {
         }
 
         function getSocket() {
-            if (socket === null) {
+            if (socket === null && websocketUri) {
                 socket = io.connect(websocketUri);
                 socket.on('update', handleUpdate);
             }
@@ -133,7 +133,10 @@ export function merchi(backendUri, websocketUri) {
         }
 
         function emit(name, data) {
-            getSocket().emit(name, data);
+            var socket = getSocket();
+            if (socket) {
+                socket.emit(name, data);
+            }
         }
 
         this.subscribe = function (eventTypes, uri, method, onUpdate) {
