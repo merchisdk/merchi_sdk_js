@@ -243,6 +243,10 @@ export function merchi(backendUri, websocketUri) {
     shipmentCompanies.add(10, 'realtime express');
     shipmentCompanies.add(11, 'Uber');
     shipmentCompanies.add(12, 'Civic Transport Couriers');
+    shipmentCompanies.add(13, 'NZ Post');
+    shipmentCompanies.add(14, 'Sendle');
+    shipmentCompanies.add(15, 'USPS');
+    shipmentCompanies.add(16, 'Fusion Freight');
 
     inventoryStatuses.add("DEDUCTED", 0)
     inventoryStatuses.add("CAN_DEDUCT", 1)
