@@ -117,6 +117,11 @@ export function Product() {
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'internalTags', InternalTag);
+    addPropertyTo(this, 'googleMerchantCenterId');
+    addPropertyTo(this, 'googleMerchantCenterTitle');
+    addPropertyTo(this, 'googleMerchantCenterDescription');
+    addPropertyTo(this, 'googleMerchantCenterProductUrl');
+    addPropertyTo(this, 'googleMerchantCenterPrice');
 
     this.create = function (success, error, embed, asDomain) {
         var data = serialise(this),
