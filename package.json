@@ -1,6 +1,6 @@
 {
   "name": "merchi_sdk_js",
-  "version": "0.0.663-google-merchant-test-b",
+  "version": "0.0.663-google-merchant-test-c",
   "type": "module",
   "main": "src/merchi.js",
   "module": "src/merchi.js",

@@ -90,6 +90,7 @@ export function Domain() {
 
     addPropertyTo(this, 'scalablePressApiKey');
     addPropertyTo(this, 'googleMerchantApiKey');
+    addPropertyTo(this, 'googleMerchantId');
 
     this.create = function (success, error, embed, as_domain) {
         var data = serialise(this),
