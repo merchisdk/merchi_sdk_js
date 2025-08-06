@@ -309,6 +309,12 @@ export function getList(resource, success, error, parameters, withUpdates) {
         request.query().add(
             'platform_category_id', parameters.platformCategoryId);
     }
+    if (notEmpty(parameters.googleMerchantCenterExported)) {
+        request.query().add(
+            'google_merchant_center_exported',
+            parameters.googleMerchantCenterExported
+        );
+    }
     if (notEmpty(parameters.groupBuyForJobId)) {
         request.query().add(
             'group_buy_for_job_id', parameters.groupBuyForJobId);
