@@ -45,6 +45,7 @@ export function Product() {
     addPropertyTo(this, 'spProductId');
     addPropertyTo(this, 'shopifyProductId');
     addPropertyTo(this, 'minimum');
+    addPropertyTo(this, 'minimumPrice')
     addPropertyTo(this, 'minimumPerGroup');
     addPropertyTo(this, 'deliveryDaysNormal');
     addPropertyTo(this, 'unitPrice');
