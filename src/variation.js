@@ -18,6 +18,7 @@ export function Variation() {
     addPropertyTo(this, 'onceOffCost');
     addPropertyTo(this, 'unitCost');
     addPropertyTo(this, 'unitCostTotal');
+    addPropertyTo(this, 'isVisible');
     addPropertyTo(this, 'selectableOptions', VariationOption);
     addPropertyTo(this, 'selectedOptions', VariationOption);
     addPropertyTo(this, 'variationField', VariationField);

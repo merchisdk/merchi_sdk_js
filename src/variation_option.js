@@ -20,6 +20,7 @@ export function VariationOption() {
     addPropertyTo(this, 'unitCostTotal');
     addPropertyTo(this, 'totalCost');
     addPropertyTo(this, 'fieldName');
+    addPropertyTo(this, 'isVisible');
     addPropertyTo(this, 'linkedFile', MerchiFile);
 
     this.copyFieldOption = function (option) {

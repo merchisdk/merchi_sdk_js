@@ -28,6 +28,7 @@ export function VariationField() {
     addPropertyTo(this, 'variationCostDiscountGroup', DiscountGroup);
     addPropertyTo(this, 'variationUnitCost');
     addPropertyTo(this, 'variationUnitCostDiscountGroup', DiscountGroup);
+    addPropertyTo(this, 'selectedBy', VariationFieldsOption);
     addPropertyTo(this, 'options', VariationFieldsOption);
     addPropertyTo(this, 'defaultOptions', VariationFieldsOption);
     addPropertyTo(this, 'multipleSelect');

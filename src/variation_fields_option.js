@@ -17,6 +17,7 @@ export function VariationFieldsOption() {
     addPropertyTo(this, 'colour');
     addPropertyTo(this, 'noInventory');
     addPropertyTo(this, 'variationCost');
+    addPropertyTo(this, 'selectedBy', VariationFieldsOption);
     addPropertyTo(this, 'variationCostDiscountGroup', DiscountGroup);
     addPropertyTo(this, 'variationUnitCost');
     addPropertyTo(this, 'variationUnitCostDiscountGroup', DiscountGroup);
