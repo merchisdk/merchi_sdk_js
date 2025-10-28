@@ -79,6 +79,7 @@ import { VariationsGroup } from './variations_group.js';
 import { QuoteItem, QuoteItems } from './quote_item.js';
 import { Quotes, Quote } from './quote.js';
 import { InternalTag, InternalTags } from './internal_tag.js';
+import { AgentConversation, AgentConversations } from './agent_conversation.js';
 
 export function merchi(backendUri, websocketUri) {
     getGlobal().merchiJsonpHandlers = {};
@@ -998,6 +999,8 @@ export function merchi(backendUri, websocketUri) {
             'GSTrate': GSTrate,
             'Notification': Notification,
             'notifications': new Notifications(),
+            'AgentConversation': AgentConversation,
+            'agentConversations': new AgentConversations(),
             'SubscriptionPlan': SubscriptionPlan,
             'subscriptionPlans': new SubscriptionPlans(),
             'VariationField': VariationField,
