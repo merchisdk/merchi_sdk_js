@@ -44,6 +44,7 @@ export function VariationField() {
     addPropertyTo(this, 'allowFilePng');
     addPropertyTo(this, 'allowFileAi');
     addPropertyTo(this, 'sellerProductEditable');
+    addPropertyTo(this, 'isHtml');
 
     this.isType = function (typeString) {
         return parseInt(this.fieldType(), 10) ===
