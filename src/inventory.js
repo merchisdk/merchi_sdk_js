@@ -15,7 +15,8 @@ export function Inventory() {
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'notes');
     addPropertyTo(this, 'quantity');
-    addPropertyTo(this, 'inventoryGroups', InventoryGroup)
+    addPropertyTo(this, 'position');
+    addPropertyTo(this, 'inventoryGroups', InventoryGroup);
     addPropertyTo(this, 'product', Product);
     addPropertyTo(this, 'address', Address);
     addPropertyTo(this, 'inventoryUnitVariations',
