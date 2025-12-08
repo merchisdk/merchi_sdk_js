@@ -45,6 +45,8 @@ export function VariationField() {
     addPropertyTo(this, 'allowFileAi');
     addPropertyTo(this, 'sellerProductEditable');
     addPropertyTo(this, 'isHtml');
+    addPropertyTo(this, 'considerBusinessHours');
+    addPropertyTo(this, 'shippingTimeIncluded');
 
     this.isType = function (typeString) {
         return parseInt(this.fieldType(), 10) ===
