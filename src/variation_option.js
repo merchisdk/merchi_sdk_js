@@ -21,6 +21,7 @@ export function VariationOption() {
     addPropertyTo(this, 'totalCost');
     addPropertyTo(this, 'fieldName');
     addPropertyTo(this, 'isVisible');
+    addPropertyTo(this, 'userDeadline');
     addPropertyTo(this, 'linkedFile', MerchiFile);
 
     this.copyFieldOption = function (option) {
