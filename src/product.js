@@ -117,6 +117,7 @@ export function Product() {
     addPropertyTo(this, 'aiContext');
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
+    addPropertyTo(this, 'groupsFirst');
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'googleMerchantCenterId');
     addPropertyTo(this, 'googleMerchantCenterTitle');
