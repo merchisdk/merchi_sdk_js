@@ -34,6 +34,8 @@ export function User() {
     addPropertyTo(this, 'preferredLanguage');
     addPropertyTo(this, 'isSuperUser');
     addPropertyTo(this, 'canEdit');
+    addPropertyTo(this, 'jobCountAsClient');
+    addPropertyTo(this, 'totalInvoiceValue');
     addPropertyTo(this, 'systemRoles', SystemRole);
     addPropertyTo(this, 'telegramUsername');
     addPropertyTo(this, 'enableCrashReports');
