@@ -36,6 +36,7 @@ export function User() {
     addPropertyTo(this, 'canEdit');
     addPropertyTo(this, 'jobCountAsClient');
     addPropertyTo(this, 'totalInvoiceValue');
+    addPropertyTo(this, 'lastJobReceived');
     addPropertyTo(this, 'systemRoles', SystemRole);
     addPropertyTo(this, 'telegramUsername');
     addPropertyTo(this, 'enableCrashReports');
