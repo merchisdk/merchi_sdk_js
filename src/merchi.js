@@ -78,6 +78,7 @@ import { VariationFieldsOption } from './variation_fields_option.js';
 import { VariationsGroup } from './variations_group.js';
 import { QuoteItem, QuoteItems } from './quote_item.js';
 import { Quotes, Quote } from './quote.js';
+import { Reminder, Reminders } from './reminder.js';
 import { InternalTag, InternalTags } from './internal_tag.js';
 import { AgentConversation, AgentConversations } from './agent_conversation.js';
 
@@ -965,6 +966,8 @@ export function merchi(backendUri, websocketUri) {
             'QuoteItems': new QuoteItems(),
             'Quote': Quote,
             'Quotes': new Quotes(),
+            'Reminder': Reminder,
+            'reminders': new Reminders(),
             'Assignment': Assignment,
             'Assignments': new Assignments(),
             'File': MerchiFile,
