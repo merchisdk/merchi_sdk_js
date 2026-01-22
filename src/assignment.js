@@ -9,6 +9,7 @@ import { Notification } from './notification.js';
 import { Quote } from './quote.js';
 import { Shipment } from './shipment.js';
 import { SupplyDomain } from './supply_domain.js';
+import { Reminder } from './reminder.js';
 import { ProductionComment } from './production_comment.js';
 
 export function Assignment() {
@@ -33,6 +34,7 @@ export function Assignment() {
     addPropertyTo(this, 'supplyDomain', SupplyDomain);
     addPropertyTo(this, 'comments', ProductionComment);
     addPropertyTo(this, 'notifications', Notification);
+    addPropertyTo(this, 'reminders', Reminder);
 
     this.get = function (success, error, embed) {
         var self = this;

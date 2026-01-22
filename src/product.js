@@ -24,6 +24,7 @@ import { Job } from './job.js';
 import { SeoDomainPage } from './seo_domain_page.js';
 import { InternalTag } from './internal_tag.js';
 import { DraftPreview } from './draft_preview.js';
+import { Reminder } from './reminder.js';
 
 export function Product() {
     this.resource = '/products';
@@ -119,6 +120,7 @@ export function Product() {
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'groupsFirst');
     addPropertyTo(this, 'internalTags', InternalTag);
+    addPropertyTo(this, 'reminders', Reminder);
     addPropertyTo(this, 'googleMerchantCenterId');
     addPropertyTo(this, 'googleMerchantCenterTitle');
     addPropertyTo(this, 'googleMerchantCenterDescription');

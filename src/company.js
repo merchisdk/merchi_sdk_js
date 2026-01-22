@@ -16,6 +16,7 @@ import { ShipmentMethod } from './shipment_method.js';
 import { User } from './user.js';
 import { UserCompany } from './user_company.js';
 import { PaymentDevice } from './payment_device.js';
+import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
 
 
@@ -97,6 +98,7 @@ export function Company() {
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'internalTags', InternalTag);
+    addPropertyTo(this, 'reminders', Reminder);
 
     this.create = function (success, error, embed, as_domain) {
         var data = serialise(this),

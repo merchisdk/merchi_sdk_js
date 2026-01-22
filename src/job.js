@@ -29,6 +29,7 @@ import { Variation } from './variation.js';
 import { VariationsGroup } from './variations_group.js';
 import { Item } from './item.js';
 import { JobComment } from './job_comment.js';
+import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
 
 
@@ -124,6 +125,7 @@ export function Job() {
     addPropertyTo(this, 'assignments', Assignment);
     addPropertyTo(this, 'archived');
     addPropertyTo(this, 'notifications', Notification);
+    addPropertyTo(this, 'reminders', Reminder);
     addPropertyTo(this, 'variationsGroups', VariationsGroup);
     addPropertyTo(this, 'variations', Variation);
     addPropertyTo(this, 'jobVolume');
