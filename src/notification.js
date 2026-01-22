@@ -11,6 +11,7 @@ import { DraftComment } from './draft_comment.js';
 import { JobComment } from './job_comment.js';
 import { ProductionComment } from './production_comment.js';
 import { Invoice } from './invoice.js';
+import { Reminder } from './reminder.js';
 
 export function Notification() {
     this.resource = '/notifications';
@@ -39,6 +40,7 @@ export function Notification() {
     addPropertyTo(this, 'relatedDraftComment', DraftComment);
     addPropertyTo(this, 'relatedProductionComment', ProductionComment);
     addPropertyTo(this, 'relatedInvoice', Invoice);
+    addPropertyTo(this, 'reminders', Reminder);
 
     this.title = function () {
        if (this.subject() && this.subject() !== 'None') {

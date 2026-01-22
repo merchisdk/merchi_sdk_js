@@ -20,10 +20,13 @@ export function Reminder() {
 
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'user', User);
+    addPropertyTo(this, 'userProfile', User);
     addPropertyTo(this, 'created');
     addPropertyTo(this, 'updated');
     addPropertyTo(this, 'remindDate');
     addPropertyTo(this, 'message');
+    addPropertyTo(this, 'sendEmail');
+    addPropertyTo(this, 'sendSms');
     addPropertyTo(this, 'domainTags', DomainTag);
     addPropertyTo(this, 'remindUsers', User);
     addPropertyTo(this, 'job', Job);
