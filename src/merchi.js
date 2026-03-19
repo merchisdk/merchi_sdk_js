@@ -81,6 +81,9 @@ import { Quotes, Quote } from './quote.js';
 import { Reminder, Reminders } from './reminder.js';
 import { InternalTag, InternalTags } from './internal_tag.js';
 import { AgentConversation, AgentConversations } from './agent_conversation.js';
+import { DomainChatSettings, DomainChatSettingsList } from './domain_chat_settings.js';
+import { SupportConversation, SupportConversations } from './support_conversation.js';
+import { SupportMessage, SupportMessages } from './support_message.js';
 
 export function merchi(backendUri, websocketUri) {
     getGlobal().merchiJsonpHandlers = {};
@@ -1004,6 +1007,12 @@ export function merchi(backendUri, websocketUri) {
             'notifications': new Notifications(),
             'AgentConversation': AgentConversation,
             'agentConversations': new AgentConversations(),
+            'DomainChatSettings': DomainChatSettings,
+            'domainChatSettingsList': new DomainChatSettingsList(),
+            'SupportConversation': SupportConversation,
+            'supportConversations': new SupportConversations(),
+            'SupportMessage': SupportMessage,
+            'supportMessages': new SupportMessages(),
             'SubscriptionPlan': SubscriptionPlan,
             'subscriptionPlans': new SubscriptionPlans(),
             'VariationField': VariationField,
