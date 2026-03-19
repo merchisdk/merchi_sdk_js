@@ -10,11 +10,14 @@ export function SupportConversation() {
     this.temporaryId = generateUUID();
 
     addPropertyTo(this, 'id');
-    addPropertyTo(this, 'domain', Domain);
-    addPropertyTo(this, 'guestId');
-    addPropertyTo(this, 'user', User);
     addPropertyTo(this, 'creationDate');
     addPropertyTo(this, 'lastMessageAt');
+    addPropertyTo(this, 'domainId');
+    addPropertyTo(this, 'domain', Domain);
+    addPropertyTo(this, 'guestId');
+    addPropertyTo(this, 'clientFingerprint');
+    addPropertyTo(this, 'userId');
+    addPropertyTo(this, 'user', User);
     addPropertyTo(this, 'messages', SupportMessage);
 
     this.create = function (success, error, embed, as_domain) {
