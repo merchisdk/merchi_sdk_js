@@ -1,6 +1,8 @@
 import { generateUUID } from './uuid.js';
-import { addPropertyTo, serialise, fromJson, create, getOne, getList, fromJsonList } from './model.js';
+import { addPropertyTo, serialise, fromJson, create, getOne, getList, fromJsonList,
+    patchOne } from './model.js';
 import { Domain } from './domain.js';
+import { DomainTag } from './domain_tag.js';
 import { User } from './user.js';
 import { SupportMessage } from './support_message.js';
 
@@ -10,11 +12,18 @@ export function SupportConversation() {
     this.temporaryId = generateUUID();
 
     addPropertyTo(this, 'id');
-    addPropertyTo(this, 'domain', Domain);
-    addPropertyTo(this, 'guestId');
-    addPropertyTo(this, 'user', User);
     addPropertyTo(this, 'creationDate');
     addPropertyTo(this, 'lastMessageAt');
+    addPropertyTo(this, 'archivedAt');
+    addPropertyTo(this, 'domainId');
+    addPropertyTo(this, 'domain', Domain);
+    addPropertyTo(this, 'guestId');
+    addPropertyTo(this, 'guestContactEmail');
+    addPropertyTo(this, 'guestContactName');
+    addPropertyTo(this, 'clientFingerprint');
+    addPropertyTo(this, 'userId');
+    addPropertyTo(this, 'user', User);
+    addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'messages', SupportMessage);
 
     this.create = function (success, error, embed, as_domain) {
@@ -44,6 +53,24 @@ export function SupportConversation() {
             id: this.id(),
             success: handleResponse,
             error: error,
+            embed: embed
+        });
+    };
+
+    this.patch = function (success, error, embed, asDomain) {
+        var self = this,
+            data = serialise(self, undefined, undefined, undefined,
+                {excludeOld: true})[0];
+        function handleResponse(result) {
+            success(fromJson(self, result[self.json], { makesDirty: false }));
+        }
+        patchOne({
+            resource: this.resource,
+            id: this.id(),
+            as_domain: asDomain,
+            success: handleResponse,
+            error: error,
+            data: data,
             embed: embed
         });
     };
