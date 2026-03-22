@@ -19,6 +19,7 @@ export function DomainChatSettings() {
     addPropertyTo(this, 'awayMessage');
     addPropertyTo(this, 'notifyEmailNewConversation');
     addPropertyTo(this, 'notifyEmailNewMessage');
+    addPropertyTo(this, 'requireGuestContact');
 
     this.get = function (success, error, embed) {
         var self = this;
@@ -43,7 +44,7 @@ export function DomainChatSettings() {
         patchOne({
             resource: this.resource,
             id: this.id(),
-            parameters: data[0],
+            data: data[0],
             files: data[1],
             success: handleResponse,
             error: error,
