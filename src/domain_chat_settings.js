@@ -20,6 +20,7 @@ export function DomainChatSettings() {
     addPropertyTo(this, 'notifyEmailNewConversation');
     addPropertyTo(this, 'notifyEmailNewMessage');
     addPropertyTo(this, 'requireGuestContact');
+    addPropertyTo(this, 'embedTestMode');
 
     this.get = function (success, error, embed) {
         var self = this;
