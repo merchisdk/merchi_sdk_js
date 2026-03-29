@@ -23,6 +23,9 @@ export function DomainChatSettings() {
     addPropertyTo(this, 'assignedUsers', User);
     addPropertyTo(this, 'requireGuestContact');
     addPropertyTo(this, 'embedTestMode');
+    addPropertyTo(this, 'autoOpenDelay');
+    addPropertyTo(this, 'autoOpenMessage');
+    addPropertyTo(this, 'autoOpenMode');
 
     this.get = function (success, error, embed) {
         var self = this;
