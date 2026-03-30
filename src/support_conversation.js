@@ -25,6 +25,7 @@ export function SupportConversation() {
     addPropertyTo(this, 'user', User);
     addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'messages', SupportMessage);
+    addPropertyTo(this, 'messagesCount');
 
     this.create = function (success, error, embed, as_domain) {
         var data = serialise(this),
