@@ -21,6 +21,8 @@ export function SupportConversation() {
     addPropertyTo(this, 'guestContactEmail');
     addPropertyTo(this, 'guestContactName');
     addPropertyTo(this, 'clientFingerprint');
+    addPropertyTo(this, 'name');
+    addPropertyTo(this, 'notes');
     addPropertyTo(this, 'userId');
     addPropertyTo(this, 'user', User);
     addPropertyTo(this, 'tags', DomainTag);
