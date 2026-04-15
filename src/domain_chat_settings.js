@@ -20,12 +20,19 @@ export function DomainChatSettings() {
     addPropertyTo(this, 'awayMessage');
     addPropertyTo(this, 'notifyEmailNewConversation');
     addPropertyTo(this, 'notifyEmailNewMessage');
+    addPropertyTo(this, 'telegramChatId');
     addPropertyTo(this, 'assignedUsers', User);
     addPropertyTo(this, 'requireGuestContact');
     addPropertyTo(this, 'embedTestMode');
     addPropertyTo(this, 'autoOpenDelay');
     addPropertyTo(this, 'autoOpenMessage');
     addPropertyTo(this, 'autoOpenMode');
+    addPropertyTo(this, 'aiFallbackEnabled');
+    addPropertyTo(this, 'aiFallbackScope');
+    addPropertyTo(this, 'aiDisclosureMode');
+    addPropertyTo(this, 'aiMaxRepliesPerConversation');
+    addPropertyTo(this, 'aiCooldownSeconds');
+    addPropertyTo(this, 'aiEscalationMessage');
 
     this.get = function (success, error, embed) {
         var self = this;

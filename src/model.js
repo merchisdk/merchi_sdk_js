@@ -467,6 +467,10 @@ export function getList(resource, success, error, parameters, withUpdates) {
         request.query().add('receiver_id',
                             JSON.stringify(parameters.receiverId));
     }
+    if (parameters.userAsReceiver) {
+        request.query().add('user_as_receiver',
+                            JSON.stringify(parameters.userAsReceiver));
+    }
     if (notEmpty(parameters.queryString)) {
         request.query().add('query_string',
                             parameters.queryString);

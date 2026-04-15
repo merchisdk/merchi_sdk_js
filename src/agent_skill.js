@@ -19,6 +19,10 @@ export function AgentSkill() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'slug');
     addPropertyTo(this, 'title');
+    addPropertyTo(this, 'scope');
+    addPropertyTo(this, 'domain');
+    addPropertyTo(this, 'category');
+    addPropertyTo(this, 'product');
     addPropertyTo(this, 'description');
     addPropertyTo(this, 'priority');
     addPropertyTo(this, 'createdAt');
