@@ -290,6 +290,9 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (notEmpty(parameters.tab)) {
         request.query().add('tab', parameters.tab);
     }
+    if (notEmpty(parameters.trackingNumber)) {
+        request.query().add('tracking_number', parameters.trackingNumber);
+    }
     if (notEmpty(parameters.as)) {
         request.query().add('as', parameters.as);
     }
