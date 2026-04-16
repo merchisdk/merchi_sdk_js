@@ -16,7 +16,6 @@ export function SupportConversation() {
     addPropertyTo(this, 'lastMessageAt');
     addPropertyTo(this, 'archivedAt');
     addPropertyTo(this, 'domain', Domain);
-    addPropertyTo(this, 'guestId');
     addPropertyTo(this, 'guestContactEmail');
     addPropertyTo(this, 'guestContactName');
     addPropertyTo(this, 'clientFingerprint');
