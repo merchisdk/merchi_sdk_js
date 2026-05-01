@@ -116,6 +116,7 @@ export function Product() {
     addPropertyTo(this, 'shipmentMethods', ShipmentMethod);
     addPropertyTo(this, 'seoDomainPages', SeoDomainPage);
     addPropertyTo(this, 'aiContext');
+    addPropertyTo(this, 'aiContextDrafting');
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'groupsFirst');
