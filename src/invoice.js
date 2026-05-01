@@ -9,10 +9,12 @@ import { Domain } from './domain.js';
 import { DomainTag } from './domain_tag.js';
 import { Item } from './item.js';
 import { Company } from './company.js';
+import { CompanyInvoiceSettingsVersion } from './company_invoice_settings_version.js';
 import { PhoneNumber } from './phone_number.js';
 import { User } from './user.js';
 import { Shipment } from './shipment.js';
 import { MerchiFile } from './merchi_file.js';
+import { InvoiceTemplateVersion } from './invoice_template_version.js';
 import { Quote } from './quote.js';
 import { Payment } from './payment.js';
 import { Job } from './job.js';
@@ -72,6 +74,9 @@ export function Invoice() {
     addPropertyTo(this, 'shopifyOrderId');
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);
+    addPropertyTo(this, 'templateVersion', InvoiceTemplateVersion);
+    addPropertyTo(this, 'settingsVersion', CompanyInvoiceSettingsVersion);
+    addPropertyTo(this, 'rendererUsed');
 
     this.create = function (success, error, embed, asDomain) {
         var data = serialise(this),

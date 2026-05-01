@@ -6,6 +6,7 @@ import { AutomaticPaymentRelationship } from './automatic_payment_relationship.j
 import { Address } from './address.js';
 import { Bank } from './bank.js';
 import { CountryTax, NoTaxEntity } from './country_tax.js';
+import { CompanyInvoiceSettings } from './company_invoice_settings.js';
 import { CompanyInvitation } from './company_invitation.js';
 import { Domain } from './domain.js';
 import { EmailAddress } from './email_address.js';
@@ -116,6 +117,7 @@ export function Company() {
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);
+    addPropertyTo(this, 'invoiceSettings', CompanyInvoiceSettings);
 
     this.create = function (success, error, embed, as_domain) {
         var data = serialise(this),

@@ -50,6 +50,10 @@ import { InventoryUnitVariation } from './inventory_unit_variation.js';
 import { MatchingInventory } from './matching_inventory.js';
 import { Notification, Notifications } from './notification.js';
 import { Invoice, Invoices } from './invoice.js';
+import { InvoiceTemplate, InvoiceTemplates } from './invoice_template.js';
+import { InvoiceTemplateVersion, InvoiceTemplateVersions } from './invoice_template_version.js';
+import { CompanyInvoiceSettings, CompanyInvoiceSettingsList } from './company_invoice_settings.js';
+import { CompanyInvoiceSettingsVersion, CompanyInvoiceSettingsVersions } from './company_invoice_settings_version.js';
 import { Job, Jobs } from './job.js';
 import { JobComment } from './job_comment.js';
 import { MerchiFile, MerchiFiles } from './merchi_file.js';
@@ -962,6 +966,14 @@ export function merchi(backendUri, websocketUri) {
             'internalTags': new InternalTags(),
             'Invoice': Invoice,
             'invoices': new Invoices(),
+            'InvoiceTemplate': InvoiceTemplate,
+            'invoiceTemplates': new InvoiceTemplates(),
+            'InvoiceTemplateVersion': InvoiceTemplateVersion,
+            'invoiceTemplateVersions': new InvoiceTemplateVersions(),
+            'CompanyInvoiceSettings': CompanyInvoiceSettings,
+            'companyInvoiceSettingsList': new CompanyInvoiceSettingsList(),
+            'CompanyInvoiceSettingsVersion': CompanyInvoiceSettingsVersion,
+            'companyInvoiceSettingsVersions': new CompanyInvoiceSettingsVersions(),
             'Job': Job,
             'jobs': new Jobs(),
             'JobComment': JobComment,
