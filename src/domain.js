@@ -12,8 +12,10 @@ import { MerchiFile } from './merchi_file.js';
 import { Menu } from './menu.js';
 import { SupplyDomain } from './supply_domain.js';
 import { SeoDomainPage } from './seo_domain_page.js';
+import { DomainChatSettings } from './domain_chat_settings.js';
 import { User, Users } from './user.js';
 import { InternalTag } from './internal_tag.js';
+import { Reminder } from './reminder.js';
 import { ShipmentMethod } from './shipment_method.js';
 
 export function Domain() {
@@ -75,12 +77,14 @@ export function Domain() {
     addPropertyTo(this, 'enableEmailNotifications');
     addPropertyTo(this, 'enableSmsNotifications');
     addPropertyTo(this, 'seoDomainPages', SeoDomainPage);
+    addPropertyTo(this, 'domainChatSettings', DomainChatSettings);
     addPropertyTo(this, 'themes', Theme);
     addPropertyTo(this, 'supplyProducts', SupplyDomain);
     addPropertyTo(this, 'domainInvitations', DomainInvitation);
     addPropertyTo(this, 'jobsAssignees', User);
     addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'internalTags', InternalTag);
+    addPropertyTo(this, 'reminders', Reminder);
 
     addPropertyTo(this, 'deploymentOnline');
     addPropertyTo(this, 'deploymentInProgress');

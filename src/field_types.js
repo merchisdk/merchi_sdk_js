@@ -13,3 +13,4 @@ fieldTypes.add("FIELD_INSTRUCTIONS", 8);
 fieldTypes.add("IMAGE_SELECT", 9);
 fieldTypes.add("COLOUR_PICKER", 10);
 fieldTypes.add("COLOUR_SELECT", 11);
+fieldTypes.add("TURNAROUND_TIME", 12);

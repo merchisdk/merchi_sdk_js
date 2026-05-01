@@ -28,6 +28,7 @@ export function VariationField() {
     addPropertyTo(this, 'variationCostDiscountGroup', DiscountGroup);
     addPropertyTo(this, 'variationUnitCost');
     addPropertyTo(this, 'variationUnitCostDiscountGroup', DiscountGroup);
+    addPropertyTo(this, 'selectedBy', VariationFieldsOption);
     addPropertyTo(this, 'options', VariationFieldsOption);
     addPropertyTo(this, 'defaultOptions', VariationFieldsOption);
     addPropertyTo(this, 'multipleSelect');
@@ -43,6 +44,9 @@ export function VariationField() {
     addPropertyTo(this, 'allowFilePng');
     addPropertyTo(this, 'allowFileAi');
     addPropertyTo(this, 'sellerProductEditable');
+    addPropertyTo(this, 'isHtml');
+    addPropertyTo(this, 'considerBusinessHours');
+    addPropertyTo(this, 'shippingTimeIncluded');
 
     this.isType = function (typeString) {
         return parseInt(this.fieldType(), 10) ===

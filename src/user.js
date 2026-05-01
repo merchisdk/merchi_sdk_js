@@ -15,6 +15,7 @@ import { Domain } from './domain.js';
 import { MerchiFile } from './merchi_file.js';
 import { SystemRole } from './system_role.js';
 import { UserCompany } from './user_company.js';
+import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
 
 export function User() {
@@ -34,6 +35,9 @@ export function User() {
     addPropertyTo(this, 'preferredLanguage');
     addPropertyTo(this, 'isSuperUser');
     addPropertyTo(this, 'canEdit');
+    addPropertyTo(this, 'jobCountAsClient');
+    addPropertyTo(this, 'totalInvoiceValue');
+    addPropertyTo(this, 'lastJobReceived');
     addPropertyTo(this, 'systemRoles', SystemRole);
     addPropertyTo(this, 'telegramUsername');
     addPropertyTo(this, 'enableCrashReports');
@@ -55,6 +59,7 @@ export function User() {
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'internalTags', InternalTag);
+    addPropertyTo(this, 'reminders', Reminder);
 
     this.create = function (success, error, embed, as_domain) {
         var self = this,

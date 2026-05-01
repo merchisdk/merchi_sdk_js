@@ -506,6 +506,18 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (parameters.tagNames) {
         request.query().add('tag_names', parameters.tagNames);
     }
+    if (parameters.tagNames) {
+        request.query().add(
+            'exclude_tags',
+            parameters.excludeTags
+        );
+    }
+    if (parameters.tagNames) {
+        request.query().add(
+            'exclude_tags_internal',
+            parameters.excludeTagsInternal
+        );
+    }
     if (parameters.turnaroundTimeDays) {
         request.query().add(
             'turnaround_time_days',
