@@ -81,6 +81,9 @@ import { Quotes, Quote } from './quote.js';
 import { Reminder, Reminders } from './reminder.js';
 import { InternalTag, InternalTags } from './internal_tag.js';
 import { AgentConversation, AgentConversations } from './agent_conversation.js';
+import { AgentSkill, AgentSkills } from './agent_skill.js';
+import { AgentSkillVersion, AgentSkillVersions } from './agent_skill_version.js';
+import { AgentSkillApproval, AgentSkillApprovals } from './agent_skill_approval.js';
 import { DomainChatSettings, DomainChatSettingsList } from './domain_chat_settings.js';
 import { SupportConversation, SupportConversations } from './support_conversation.js';
 import { SupportMessage, SupportMessages } from './support_message.js';
@@ -1007,6 +1010,12 @@ export function merchi(backendUri, websocketUri) {
             'notifications': new Notifications(),
             'AgentConversation': AgentConversation,
             'agentConversations': new AgentConversations(),
+            'AgentSkill': AgentSkill,
+            'agentSkills': new AgentSkills(),
+            'AgentSkillVersion': AgentSkillVersion,
+            'agentSkillVersions': new AgentSkillVersions(),
+            'AgentSkillApproval': AgentSkillApproval,
+            'agentSkillApprovals': new AgentSkillApprovals(),
             'DomainChatSettings': DomainChatSettings,
             'domainChatSettingsList': new DomainChatSettingsList(),
             'SupportConversation': SupportConversation,

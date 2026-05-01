@@ -21,10 +21,13 @@ export function SupportConversation() {
     addPropertyTo(this, 'guestContactEmail');
     addPropertyTo(this, 'guestContactName');
     addPropertyTo(this, 'clientFingerprint');
+    addPropertyTo(this, 'name');
+    addPropertyTo(this, 'notes');
     addPropertyTo(this, 'userId');
     addPropertyTo(this, 'user', User);
     addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'messages', SupportMessage);
+    addPropertyTo(this, 'messagesCount');
 
     this.create = function (success, error, embed, as_domain) {
         var data = serialise(this),

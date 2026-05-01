@@ -2,6 +2,7 @@ import { generateUUID } from './uuid.js';
 import { addPropertyTo, serialise, fromJson, getOne, patchOne, fromJsonList, getList } from './model.js';
 import { Domain } from './domain.js';
 import { MerchiFile } from './merchi_file.js';
+import { User } from './user.js';
 
 export function DomainChatSettings() {
     this.resource = '/domain_chat_settings';
@@ -19,7 +20,12 @@ export function DomainChatSettings() {
     addPropertyTo(this, 'awayMessage');
     addPropertyTo(this, 'notifyEmailNewConversation');
     addPropertyTo(this, 'notifyEmailNewMessage');
+    addPropertyTo(this, 'assignedUsers', User);
     addPropertyTo(this, 'requireGuestContact');
+    addPropertyTo(this, 'embedTestMode');
+    addPropertyTo(this, 'autoOpenDelay');
+    addPropertyTo(this, 'autoOpenMessage');
+    addPropertyTo(this, 'autoOpenMode');
 
     this.get = function (success, error, embed) {
         var self = this;
