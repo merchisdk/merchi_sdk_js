@@ -78,8 +78,15 @@ import { VariationFieldsOption } from './variation_fields_option.js';
 import { VariationsGroup } from './variations_group.js';
 import { QuoteItem, QuoteItems } from './quote_item.js';
 import { Quotes, Quote } from './quote.js';
+import { Reminder, Reminders } from './reminder.js';
 import { InternalTag, InternalTags } from './internal_tag.js';
 import { AgentConversation, AgentConversations } from './agent_conversation.js';
+import { AgentSkill, AgentSkills } from './agent_skill.js';
+import { AgentSkillVersion, AgentSkillVersions } from './agent_skill_version.js';
+import { AgentSkillApproval, AgentSkillApprovals } from './agent_skill_approval.js';
+import { DomainChatSettings, DomainChatSettingsList } from './domain_chat_settings.js';
+import { SupportConversation, SupportConversations } from './support_conversation.js';
+import { SupportMessage, SupportMessages } from './support_message.js';
 
 export function merchi(backendUri, websocketUri) {
     getGlobal().merchiJsonpHandlers = {};
@@ -965,6 +972,8 @@ export function merchi(backendUri, websocketUri) {
             'QuoteItems': new QuoteItems(),
             'Quote': Quote,
             'Quotes': new Quotes(),
+            'Reminder': Reminder,
+            'reminders': new Reminders(),
             'Assignment': Assignment,
             'Assignments': new Assignments(),
             'File': MerchiFile,
@@ -1001,6 +1010,18 @@ export function merchi(backendUri, websocketUri) {
             'notifications': new Notifications(),
             'AgentConversation': AgentConversation,
             'agentConversations': new AgentConversations(),
+            'AgentSkill': AgentSkill,
+            'agentSkills': new AgentSkills(),
+            'AgentSkillVersion': AgentSkillVersion,
+            'agentSkillVersions': new AgentSkillVersions(),
+            'AgentSkillApproval': AgentSkillApproval,
+            'agentSkillApprovals': new AgentSkillApprovals(),
+            'DomainChatSettings': DomainChatSettings,
+            'domainChatSettingsList': new DomainChatSettingsList(),
+            'SupportConversation': SupportConversation,
+            'supportConversations': new SupportConversations(),
+            'SupportMessage': SupportMessage,
+            'supportMessages': new SupportMessages(),
             'SubscriptionPlan': SubscriptionPlan,
             'subscriptionPlans': new SubscriptionPlans(),
             'VariationField': VariationField,

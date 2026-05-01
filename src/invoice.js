@@ -16,6 +16,7 @@ import { MerchiFile } from './merchi_file.js';
 import { Quote } from './quote.js';
 import { Payment } from './payment.js';
 import { Job } from './job.js';
+import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
 
 export function Invoice() {
@@ -70,6 +71,7 @@ export function Invoice() {
     addPropertyTo(this, 'shipments', Shipment);
     addPropertyTo(this, 'shopifyOrderId');
     addPropertyTo(this, 'internalTags', InternalTag);
+    addPropertyTo(this, 'reminders', Reminder);
 
     this.create = function (success, error, embed, asDomain) {
         var data = serialise(this),

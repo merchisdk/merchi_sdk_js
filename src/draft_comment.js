@@ -13,10 +13,12 @@ export function DraftComment() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'draft', Draft);
     addPropertyTo(this, 'user', User);
+    addPropertyTo(this, 'lastEditedBy', User);
     addPropertyTo(this, 'file', MerchiFile);
     addPropertyTo(this, 'notifications', Notification);
     addPropertyTo(this, 'job', Job);
     addPropertyTo(this, 'date');
+    addPropertyTo(this, 'lastEditedTime');
     addPropertyTo(this, 'text');
     addPropertyTo(this, 'urgency');
     addPropertyTo(this, 'subject');
