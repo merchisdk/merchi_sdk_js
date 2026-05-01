@@ -290,6 +290,9 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (notEmpty(parameters.tab)) {
         request.query().add('tab', parameters.tab);
     }
+    if (notEmpty(parameters.trackingNumber)) {
+        request.query().add('tracking_number', parameters.trackingNumber);
+    }
     if (notEmpty(parameters.as)) {
         request.query().add('as', parameters.as);
     }
@@ -466,6 +469,10 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (parameters.receiverId) {
         request.query().add('receiver_id',
                             JSON.stringify(parameters.receiverId));
+    }
+    if (parameters.userAsReceiver) {
+        request.query().add('user_as_receiver',
+                            JSON.stringify(parameters.userAsReceiver));
     }
     if (notEmpty(parameters.queryString)) {
         request.query().add('query_string',

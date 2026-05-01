@@ -15,16 +15,15 @@ export function SupportConversation() {
     addPropertyTo(this, 'creationDate');
     addPropertyTo(this, 'lastMessageAt');
     addPropertyTo(this, 'archivedAt');
-    addPropertyTo(this, 'domainId');
     addPropertyTo(this, 'domain', Domain);
-    addPropertyTo(this, 'guestId');
     addPropertyTo(this, 'guestContactEmail');
     addPropertyTo(this, 'guestContactName');
     addPropertyTo(this, 'clientFingerprint');
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'notes');
-    addPropertyTo(this, 'userId');
     addPropertyTo(this, 'user', User);
+    addPropertyTo(this, 'assignedUser', User);
+    addPropertyTo(this, 'aiAutoReply');
     addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'messages', SupportMessage);
     addPropertyTo(this, 'messagesCount');

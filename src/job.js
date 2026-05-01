@@ -50,6 +50,7 @@ export function Job() {
     addPropertyTo(this, 'received');
     addPropertyTo(this, 'deadline');
     addPropertyTo(this, 'updated');
+    addPropertyTo(this, 'dateLastActioned');
     addPropertyTo(this, 'deductionDate');
     addPropertyTo(this, 'preDraftCommentsCount');
     addPropertyTo(this, 'clientFiles', MerchiFile);

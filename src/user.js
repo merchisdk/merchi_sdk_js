@@ -17,6 +17,7 @@ import { SystemRole } from './system_role.js';
 import { UserCompany } from './user_company.js';
 import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
+import { DomainTag } from './domain_tag.js';
 
 export function User() {
     this.resource = '/users';
@@ -58,6 +59,7 @@ export function User() {
     addPropertyTo(this, 'aiContext');
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
+    addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);
 
