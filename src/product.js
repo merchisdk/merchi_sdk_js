@@ -42,6 +42,7 @@ export function Product() {
     addPropertyTo(this, 'independent');
     addPropertyTo(this, 'productType');
     addPropertyTo(this, 'description');
+    addPropertyTo(this, 'aiContextDrafting');
     addPropertyTo(this, 'notes');
     addPropertyTo(this, 'spProductId');
     addPropertyTo(this, 'shopifyProductId');

@@ -24,6 +24,9 @@ export function DraftTemplate() {
     addPropertyTo(this, 'height');
     addPropertyTo(this, 'width');
     addPropertyTo(this, 'draftPreviewLayer', DraftPreviewLayer);
+    addPropertyTo(this, 'customisationMap');
+    addPropertyTo(this, 'customisationMapSource');
+    addPropertyTo(this, 'customisationMapFileId');
 
     this.create = function (options) {
         var data = serialise(this),
