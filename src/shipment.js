@@ -12,6 +12,7 @@ import { Invoice } from './invoice.js';
 import { Job } from './job.js';
 import { MerchiFile } from './merchi_file.js';
 import { ShipmentItem } from './shipment_item.js';
+import { ShipmentLog } from './shipment_log.js';
 import { ShipmentMethod } from './shipment_method.js';
 import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
@@ -60,6 +61,7 @@ export function Shipment() {
     addPropertyTo(this, 'shipmentMethod', ShipmentMethod);
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);
+    addPropertyTo(this, 'logs', ShipmentLog);
 
     this.get = function (success, error, embed) {
         var self = this;

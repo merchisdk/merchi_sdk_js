@@ -62,6 +62,7 @@ import { ProductionComment } from './production_comment.js';
 import { PhoneNumber, PhoneNumbers } from './phone_number.js';
 import { Session, Sessions } from './session.js';
 import { Shipment, Shipments } from './shipment.js';
+import { ShipmentLog, ShipmentLogs } from './shipment_log.js';
 import { ShipmentMethod, ShipmentMethods } from './shipment_method.js';
 import { ShipmentMethodVariation, ShipmentMethodVariations } from
     './shipment_method_variation.js';
@@ -981,6 +982,8 @@ export function merchi(backendUri, websocketUri) {
             'removeUnstoredFiles': removeUnstoredFiles,
             'Shipment': Shipment,
             'shipments': new Shipments(),
+            'ShipmentLog': ShipmentLog,
+            'shipmentLogs': new ShipmentLogs(),
             'ShipmentMethod': ShipmentMethod,
             'shipmentMethods': new ShipmentMethods(),
             'ShipmentMethodVariation': ShipmentMethodVariation,
