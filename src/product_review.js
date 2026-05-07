@@ -59,6 +59,7 @@ export function ProductReview() {
     addPropertyTo(this, 'product', Product);
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'authorUserId');
+    addPropertyTo(this, 'authorName');
     addPropertyTo(this, 'job', Job);
     addPropertyTo(this, 'rating');
     addPropertyTo(this, 'title');
