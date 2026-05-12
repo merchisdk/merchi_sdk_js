@@ -253,6 +253,159 @@ export function Domain() {
     this.isUnrestricted = function () {
         return this.domainType() === domainTypesInts.get('Unrestricted');
     }
+
+    function parsePayloadAndCallbacks(payload, success, error) {
+        if (typeof payload === 'function') {
+            return {payload: {}, success: payload, error: success};
+        }
+        return {payload: payload || {}, success: success, error: error};
+    }
+
+    function appendPayload(request, payload) {
+        Object.keys(payload).forEach(function(key) {
+            var value = payload[key];
+            if (value === undefined) {
+                return;
+            }
+            if (value !== null && typeof value === 'object') {
+                request.data().add(key, JSON.stringify(value));
+            } else {
+                request.data().add(key, value);
+            }
+        });
+    }
+
+    function sendStorefrontRequest(resource, method, payload, success, error) {
+        var request = new Request();
+        request.resource(resource).method(method);
+        request.query().add('skip_rights', 'y');
+        if (payload) {
+            appendPayload(request, payload);
+        }
+        function handleResponse(status, data) {
+            if (status >= 200 && status < 300) {
+                if (success) {
+                    success(data);
+                }
+            } else if (error) {
+                error(status, data);
+            }
+        }
+        function handleError(status, data) {
+            if (error) {
+                error(status, data);
+            }
+        }
+        request.responseHandler(handleResponse).errorHandler(handleError);
+        request.send();
+    }
+
+    this.getStorefrontV2 = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.provisionStorefrontV2 = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/provision/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.createStorefrontChangeRequest = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/requests/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.getStorefrontChangeRequest = function (requestId, success, error) {
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.runStorefrontChangeRequest = function (requestId, payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/run/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.approveStorefrontChangeRequest = function (requestId, payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/approve/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.rejectStorefrontChangeRequest = function (requestId, payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/reject/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.getStorefrontV2Deployments = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/deployments/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.getStorefrontV2DeploymentLogs = function (deploymentId, success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/deployments/' +
+                deploymentId + '/logs/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.rollbackStorefrontV2 = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/rollback/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
 }
 
 export function Domains() {
