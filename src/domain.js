@@ -261,6 +261,31 @@ export function Domain() {
         return {payload: payload || {}, success: success, error: error};
     }
 
+    /**
+     * @typedef {Object} StorefrontChecksSummary
+     * @property {'passing'|'failing'|'pending'|'unknown'} [overall]
+     * @property {string} [statusState]
+     * @property {{total?: number, passed?: number, failed?: number, pending?: number, neutral?: number}} [counts]
+     * @property {string} [updatedAt]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ChangeRequest
+     * @property {number} id
+     * @property {number} domainId
+     * @property {number} storefrontV2Id
+     * @property {string} status
+     * @property {string} prompt
+     * @property {string|null} [branchName]
+     * @property {string|null} [commitSha]
+     * @property {number|null} [pullRequestNumber]
+     * @property {string|null} [previewUrl]
+     * @property {string|null} [summary]
+     * @property {StorefrontChecksSummary|null} [checksSummary]
+     * @property {string|null} [checksUpdatedAt]
+     * @property {string|null} [errorDetails]
+     */
+
     function appendPayload(request, payload) {
         Object.keys(payload).forEach(function(key) {
             var value = payload[key];
