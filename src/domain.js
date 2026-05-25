@@ -270,6 +270,26 @@ export function Domain() {
      */
 
     /**
+     * @typedef {Object} StorefrontV2Config
+     * @property {number} [id]
+     * @property {number} [domainId]
+     * @property {string} [status]
+     * @property {string|null} [starterTemplate]
+     * @property {string|null} [urlStructure]
+     * @property {string|null} [defaultBranch]
+     * @property {string|null} [activePreviewBranchName]
+     * @property {string|null} [activePreviewStartedAt]
+     * @property {number|null} [activePreviewLastRequestId]
+     * @property {string|null} [repoProvider]
+     * @property {string|null} [repoOwner]
+     * @property {string|null} [repoName]
+     * @property {string|null} [vercelProjectId]
+     * @property {string|null} [lastSuccessfulCommitSha]
+     * @property {Array<string>} [approvedStarterTemplates]
+     * @property {string} [providerMode]
+     */
+
+    /**
      * @typedef {Object} StorefrontV2ChangeRequest
      * @property {number} id
      * @property {number} domainId
@@ -284,6 +304,62 @@ export function Domain() {
      * @property {StorefrontChecksSummary|null} [checksSummary]
      * @property {string|null} [checksUpdatedAt]
      * @property {string|null} [errorDetails]
+     * @property {Array<StorefrontExecutionEvent>|null} [executionEvents]
+     */
+
+    /**
+     * @typedef {Object} StorefrontRequestContextImage
+     * @property {string} name
+     * @property {string|null} [mimeType]
+     * @property {string} dataUrl
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ChangeRequestPayload
+     * @property {string} prompt
+     * @property {Array<string>} [contextFilePaths]
+     * @property {Array<StorefrontRequestContextImage>} [contextImages]
+     */
+
+    /**
+     * @typedef {Object} StorefrontExecutionEvent
+     * @property {string} timestamp
+     * @property {string} stage
+     * @property {string} [level]
+     * @property {string} message
+     * @property {Object} [metadata]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ProvisionPayload
+     * @property {string} [starterTemplate]
+     * @property {string} [urlStructure]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2SiteContextInput
+     * @property {string} url
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2SiteContext
+     * @property {string} sourceUrl
+     * @property {Object} [style]
+     * @property {Array<string>} [sitemap]
+     * @property {Array<Object>} [navigation]
+     * @property {Array<string>} [categories]
+     * @property {Array<string>} [products]
+     * @property {Array<Object>} [tracking]
+     * @property {Array<string>} [wireframe]
+     * @property {Array<Object>} [stylesheets]
+     * @property {Array<Object>} [pageAnalysis]
+     * @property {Object} [emulationSpec]
+     * @property {string} [analysisMarkdown]
+     * @property {string} [analysisFilePath]
+     * @property {string} [analysisJsonFilePath]
+     * @property {Array<string>} [analysisScreenshotPaths]
+     * @property {Array<Object>} [analysisScreenshots]
+     * @property {string} [analysisBranch]
      */
 
     function appendPayload(request, payload) {
@@ -335,6 +411,11 @@ export function Domain() {
         );
     };
 
+    /**
+     * @param {StorefrontV2ProvisionPayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
     this.provisionStorefrontV2 = function (payload, success, error) {
         var args = parsePayloadAndCallbacks(payload, success, error);
         sendStorefrontRequest(
@@ -346,6 +427,27 @@ export function Domain() {
         );
     };
 
+    /**
+     * @param {StorefrontV2SiteContextInput|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.extractStorefrontV2SiteContext = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/site_context/extract/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2ChangeRequestPayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
     this.createStorefrontChangeRequest = function (payload, success, error) {
         var args = parsePayloadAndCallbacks(payload, success, error);
         sendStorefrontRequest(
@@ -360,6 +462,16 @@ export function Domain() {
     this.getStorefrontChangeRequest = function (requestId, success, error) {
         sendStorefrontRequest(
             '/storefront_change_requests/' + requestId + '/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.getStorefrontChangeRequestEvents = function (requestId, success, error) {
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/events/',
             'GET',
             null,
             success,
