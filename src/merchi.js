@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { isBrowser } from 'browser-or-node';
 import { generateUUID } from './uuid.js';
 import { isNull, isUndefined, isUndefinedOrNull, id,
@@ -88,6 +89,12 @@ import { AgentSkillApproval, AgentSkillApprovals } from './agent_skill_approval.
 import { DomainChatSettings, DomainChatSettingsList } from './domain_chat_settings.js';
 import { SupportConversation, SupportConversations } from './support_conversation.js';
 import { SupportMessage, SupportMessages } from './support_message.js';
+import {
+    ProductReview,
+    ProductReviews,
+    normalizeProductReviewApiJson,
+    wireProductReviewCreateBody,
+} from './product_review.js';
 
 export function merchi(backendUri, websocketUri) {
     getGlobal().merchiJsonpHandlers = {};
@@ -866,6 +873,98 @@ export function merchi(backendUri, websocketUri) {
         request.send();
     }
 
+    function productReviewsApiRoot() {
+        var base = getGlobal().merchiBackendUri;
+        if (!base.endsWith('/')) {
+            base += '/';
+        }
+        return base + 'v6';
+    }
+
+    function productReviewsSessionSuffix() {
+        if (getGlobal().currentSession &&
+                getGlobal().currentSession.token()) {
+            return '?session_token=' + encodeURIComponent(
+                getGlobal().currentSession.token());
+        }
+        return '';
+    }
+
+    /**
+     * List product reviews (domain manager/admin). ``success`` receives
+     * ``{ productReviews: ... }`` — same keys as the API, but each row is a
+     * ``ProductReview`` model instance with ``job`` / ``product`` / ``domain``.
+     */
+    function listProductReviews(productId, success, error) {
+        var url = productReviewsApiRoot() + '/products/' + productId +
+            '/reviews/' + productReviewsSessionSuffix();
+        axios.get(url)
+            .then(function (res) {
+                var reviews = new ProductReviews().fromProductListResponse(
+                    res.data);
+                success(Object.assign({}, res.data, {productReviews: reviews}));
+            })
+            .catch(function (err) {
+                error(err.response ? err.response.data : err);
+            });
+    }
+
+    /**
+     * Create a product review (buyer, JSON body). Send ``jobId`` or ``job: { id }``
+     * (completed job whose catalog product matches ``productId`` after clone
+     * resolution), plus ``rating`` and optional ``title`` / ``content``.
+     * ``success`` receives ``{ productReview }`` as a ``ProductReview`` model.
+     */
+    function createProductReview(productId, data, success, error) {
+        var url = productReviewsApiRoot() + '/products/' + productId +
+            '/reviews/' + productReviewsSessionSuffix();
+        axios.post(url, wireProductReviewCreateBody(data), {
+            headers: {'Content-Type': 'application/json'},
+        })
+            .then(function (res) {
+                var pr = fromJson(
+                    new ProductReview(),
+                    normalizeProductReviewApiJson(res.data.productReview),
+                    {makesDirty: false});
+                success(Object.assign({}, res.data, {productReview: pr}));
+            })
+            .catch(function (err) {
+                error(err.response ? err.response.data : err);
+            });
+    }
+
+    /**
+     * Patch a review (``formFields`` plain object: status, rejectionReason,
+     * rating, title, content — sent as multipart form data).
+     * ``success`` receives ``{ productReview }`` as a model when present.
+     */
+    function patchProductReview(reviewId, formFields, success, error) {
+        var url = productReviewsApiRoot() + '/product-reviews/' + reviewId +
+            '/' + productReviewsSessionSuffix();
+        var fd = new FormData();
+        Object.keys(formFields || {}).forEach(function (k) {
+            var v = formFields[k];
+            if (v !== undefined && v !== null) {
+                fd.append(k, String(v));
+            }
+        });
+        axios.patch(url, fd)
+            .then(function (res) {
+                if (!res.data || !res.data.productReview) {
+                    success(res.data);
+                    return;
+                }
+                var pr = fromJson(
+                    new ProductReview(),
+                    normalizeProductReviewApiJson(res.data.productReview),
+                    {makesDirty: false});
+                success(Object.assign({}, res.data, {productReview: pr}));
+            })
+            .catch(function (err) {
+                error(err.response ? err.response.data : err);
+            });
+    }
+
     function getProductShipmentOptions(
         productId, quantity, address, success, error) {
         var request = new Request(),
@@ -1025,6 +1124,10 @@ export function merchi(backendUri, websocketUri) {
             'supportConversations': new SupportConversations(),
             'SupportMessage': SupportMessage,
             'supportMessages': new SupportMessages(),
+            'ProductReview': ProductReview,
+            'productReviews': new ProductReviews(),
+            'normalizeProductReviewApiJson': normalizeProductReviewApiJson,
+            'wireProductReviewCreateBody': wireProductReviewCreateBody,
             'SubscriptionPlan': SubscriptionPlan,
             'subscriptionPlans': new SubscriptionPlans(),
             'VariationField': VariationField,
@@ -1103,5 +1206,8 @@ export function merchi(backendUri, websocketUri) {
             'productTypes': productTypes,
             'productTypesInts': productTypesInts,
             'productTypesSeller': productTypesSeller,
-            'getProductShipmentOptions': getProductShipmentOptions};
+            'getProductShipmentOptions': getProductShipmentOptions,
+            'listProductReviews': listProductReviews,
+            'createProductReview': createProductReview,
+            'patchProductReview': patchProductReview};
 }
