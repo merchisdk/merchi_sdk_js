@@ -253,6 +253,544 @@ export function Domain() {
     this.isUnrestricted = function () {
         return this.domainType() === domainTypesInts.get('Unrestricted');
     }
+
+    function parsePayloadAndCallbacks(payload, success, error) {
+        if (typeof payload === 'function') {
+            return {payload: {}, success: payload, error: success};
+        }
+        return {payload: payload || {}, success: success, error: error};
+    }
+
+    /**
+     * @typedef {Object} StorefrontChecksSummary
+     * @property {'passing'|'failing'|'pending'|'unknown'} [overall]
+     * @property {string} [statusState]
+     * @property {{total?: number, passed?: number, failed?: number, pending?: number, neutral?: number}} [counts]
+     * @property {string} [updatedAt]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2Config
+     * @property {number} [id]
+     * @property {number} [domainId]
+     * @property {string} [status]
+     * @property {string|null} [starterTemplate]
+     * @property {string|null} [urlStructure]
+     * @property {string|null} [defaultBranch]
+     * @property {string|null} [activePreviewBranchName]
+     * @property {string|null} [activePreviewStartedAt]
+     * @property {number|null} [activePreviewLastRequestId]
+     * @property {string|null} [repoProvider]
+     * @property {string|null} [repoOwner]
+     * @property {string|null} [repoName]
+     * @property {string|null} [vercelProjectId]
+     * @property {string|null} [lastSuccessfulCommitSha]
+     * @property {Array<string>} [approvedStarterTemplates]
+     * @property {string} [providerMode]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ChangeRequest
+     * @property {number} id
+     * @property {number} domainId
+     * @property {number} storefrontV2Id
+     * @property {string} status
+     * @property {string} prompt
+     * @property {string|null} [branchName]
+     * @property {string|null} [commitSha]
+     * @property {number|null} [pullRequestNumber]
+     * @property {string|null} [previewUrl]
+     * @property {string|null} [summary]
+     * @property {StorefrontChecksSummary|null} [checksSummary]
+     * @property {string|null} [checksUpdatedAt]
+     * @property {string|null} [errorDetails]
+     * @property {Array<StorefrontExecutionEvent>|null} [executionEvents]
+     */
+
+    /**
+     * @typedef {Object} StorefrontRequestContextImage
+     * @property {string} name
+     * @property {string|null} [mimeType]
+     * @property {string} dataUrl
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ChangeRequestPayload
+     * @property {string} prompt
+     * @property {Array<string>} [contextFilePaths]
+     * @property {Array<StorefrontRequestContextImage>} [contextImages]
+     * @property {string} [branchName]
+     * @property {boolean} [startNewBranch]
+     * @property {Object<string, string|Array<string>>} [clarificationAnswers]
+     * @property {string} [generationBriefSummary]
+     * @property {string} [generationBoilerplateFit]
+     * @property {boolean} [clarificationSkipped]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2GenerationBrief
+     * @property {string} planSummary
+     * @property {string} boilerplateFit
+     * @property {Array<Object>} gapTopics
+     * @property {Array<Object>} questions
+     * @property {number} questionCount
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2GenerationBriefPayload
+     * @property {StorefrontV2SiteContext} siteContext
+     * @property {string} [urlStructure]
+     * @property {string} [starterTemplate]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ResetResult
+     * @property {string} status
+     * @property {boolean} isProvisioned
+     * @property {string} [providerMode]
+     * @property {Array<string>} [approvedStarterTemplates]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2RepositoryTree
+     * @property {string} path
+     * @property {string} ref
+     * @property {Array<{name: string, path: string, type: string}>} entries
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2RepositoryBranches
+     * @property {string} defaultBranch
+     * @property {string|null} [activeBranchName]
+     * @property {Array<string>} branches
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2RepositoryFile
+     * @property {string} path
+     * @property {string} ref
+     * @property {string} [sha]
+     * @property {string} content
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2RepositoryFileUpdatePayload
+     * @property {string} path
+     * @property {string} content
+     * @property {string} [message]
+     * @property {string} [branch]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ProductPublishPayload
+     * @property {string} [productName]
+     * @property {string} [productUrl]
+     * @property {string} [branchName]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2CategoryPublishPayload
+     * @property {string} [categoryName]
+     * @property {string} [categoryUrl]
+     * @property {string} [branchName]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2SiteContextInput
+     * @property {string} [url]
+     * @property {string} [sourceUrl]
+     */
+
+    /**
+     * @typedef {Object} StorefrontExecutionEvent
+     * @property {string} timestamp
+     * @property {string} stage
+     * @property {string} [level]
+     * @property {string} message
+     * @property {Object} [metadata]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2ProvisionPayload
+     * @property {string} [starterTemplate]
+     * @property {string} [urlStructure]
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2StarterTemplateUrlStructurePayload
+     * @property {string} starterTemplate
+     */
+
+    /**
+     * @typedef {Object} StorefrontV2SiteContext
+     * @property {string} sourceUrl
+     * @property {Object} [style]
+     * @property {Array<string>} [sitemap]
+     * @property {Array<Object>} [navigation]
+     * @property {Array<string>} [categories]
+     * @property {Array<string>} [products]
+     * @property {Array<Object>} [tracking]
+     * @property {Array<string>} [wireframe]
+     * @property {Array<Object>} [stylesheets]
+     * @property {Array<Object>} [pageAnalysis]
+     * @property {Object} [emulationSpec]
+     * @property {string} [analysisMarkdown]
+     * @property {string} [analysisFilePath]
+     * @property {string} [analysisJsonFilePath]
+     * @property {Array<string>} [analysisScreenshotPaths]
+     * @property {Array<Object>} [analysisScreenshots]
+     * @property {string} [analysisBranch]
+     */
+
+    function appendPayload(request, payload) {
+        Object.keys(payload).forEach(function(key) {
+            var value = payload[key];
+            if (value === undefined) {
+                return;
+            }
+            if (value !== null && typeof value === 'object') {
+                request.data().add(key, JSON.stringify(value));
+            } else {
+                request.data().add(key, value);
+            }
+        });
+    }
+
+    function sendStorefrontRequest(resource, method, payload, success, error, queryParams) {
+        var request = new Request();
+        request.resource(resource).method(method);
+        request.query().add('skip_rights', 'y');
+        if (queryParams) {
+            Object.keys(queryParams).forEach(function(key) {
+                var value = queryParams[key];
+                if (value !== undefined && value !== null && value !== '') {
+                    request.query().add(key, value);
+                }
+            });
+        }
+        if (payload) {
+            appendPayload(request, payload);
+        }
+        function handleResponse(status, data) {
+            if (status >= 200 && status < 300) {
+                if (success) {
+                    success(data);
+                }
+            } else if (error) {
+                error(status, data);
+            }
+        }
+        function handleError(status, data) {
+            if (error) {
+                error(status, data);
+            }
+        }
+        request.responseHandler(handleResponse).errorHandler(handleError);
+        request.send();
+    }
+
+    this.getStorefrontV2 = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2ProvisionPayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.provisionStorefrontV2 = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/provision/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2StarterTemplateUrlStructurePayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.resolveStarterTemplateUrlStructure = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/starter_template/url_structure/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2SiteContextInput|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.extractStorefrontV2SiteContext = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/site_context/extract/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2ChangeRequestPayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.createStorefrontChangeRequest = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/requests/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2GenerationBriefPayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.createStorefrontV2GenerationBrief = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/generation_brief/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.resetStorefrontV2 = function (success, error) {
+        if (typeof success === 'function' && error === undefined) {
+            sendStorefrontRequest(
+                '/domains/' + this.id() + '/storefront_v2/reset/',
+                'POST',
+                null,
+                success,
+                error
+            );
+            return;
+        }
+        var args = parsePayloadAndCallbacks(success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/reset/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.getStorefrontChangeRequest = function (requestId, success, error) {
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.getStorefrontChangeRequestEvents = function (requestId, success, error) {
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/events/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.runStorefrontChangeRequest = function (requestId, payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/run/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.approveStorefrontChangeRequest = function (requestId, payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/approve/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.rejectStorefrontChangeRequest = function (requestId, payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/storefront_change_requests/' + requestId + '/reject/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.getStorefrontV2Deployments = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/deployments/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.getStorefrontV2DeploymentLogs = function (deploymentId, success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/deployments/' +
+                deploymentId + '/logs/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.rollbackStorefrontV2 = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/rollback/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {{path?: string, ref?: string}|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.getStorefrontV2RepositoryTree = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/repository_tree/',
+            'GET',
+            null,
+            args.success,
+            args.error,
+            args.payload
+        );
+    };
+
+    this.getStorefrontV2RepositoryBranches = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/repository_branches/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    /**
+     * @param {string} path
+     * @param {{ref?: string}|Function} refOrSuccess
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.getStorefrontV2RepositoryFile = function (path, refOrSuccess, success, error) {
+        var queryParams = {path: path};
+        if (typeof refOrSuccess === 'function') {
+            sendStorefrontRequest(
+                '/domains/' + this.id() + '/storefront_v2/repository_file/',
+                'GET',
+                null,
+                refOrSuccess,
+                success,
+                queryParams
+            );
+            return;
+        }
+        if (refOrSuccess && refOrSuccess.ref) {
+            queryParams.ref = refOrSuccess.ref;
+        }
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/repository_file/',
+            'GET',
+            null,
+            success,
+            error,
+            queryParams
+        );
+    };
+
+    /**
+     * @param {StorefrontV2RepositoryFileUpdatePayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.updateStorefrontV2RepositoryFile = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/repository_file/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2ProductPublishPayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.publishStorefrontV2Product = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/products/publish/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {StorefrontV2CategoryPublishPayload|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.publishStorefrontV2Category = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/categories/publish/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
 }
 
 export function Domains() {
