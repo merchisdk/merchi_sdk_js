@@ -51,6 +51,7 @@ export function Job() {
     addPropertyTo(this, 'deadline');
     addPropertyTo(this, 'updated');
     addPropertyTo(this, 'dateLastActioned');
+    addPropertyTo(this, 'dateFirstActioned');
     addPropertyTo(this, 'deductionDate');
     addPropertyTo(this, 'preDraftCommentsCount');
     addPropertyTo(this, 'clientFiles', MerchiFile);
