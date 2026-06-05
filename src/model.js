@@ -335,6 +335,10 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (parameters.asRole) {
         request.query().add('as_role', JSON.stringify(parameters.asRole));
     }
+    if (notEmpty(parameters.isJobManager)) {
+        request.query().add('is_job_manager',
+                            JSON.stringify(parameters.isJobManager));
+    }
     if (parameters.groupBuyOnly) {
         request.query().add('group_buy_only',
                             JSON.stringify(parameters.groupBuyOnly));
