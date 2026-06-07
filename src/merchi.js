@@ -53,6 +53,7 @@ import { Notification, Notifications } from './notification.js';
 import { Invoice, Invoices } from './invoice.js';
 import { Job, Jobs } from './job.js';
 import { JobComment } from './job_comment.js';
+import { JobNote } from './job_note.js';
 import { MerchiFile, MerchiFiles } from './merchi_file.js';
 import { Menu } from './menu.js';
 import { MenuItem } from './menu_item.js';
@@ -1065,6 +1066,7 @@ export function merchi(backendUri, websocketUri) {
             'Job': Job,
             'jobs': new Jobs(),
             'JobComment': JobComment,
+            'JobNote': JobNote,
             'Cart': Cart,
             'CartItem': CartItem,
             'Bank': Bank,

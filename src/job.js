@@ -29,6 +29,7 @@ import { Variation } from './variation.js';
 import { VariationsGroup } from './variations_group.js';
 import { Item } from './item.js';
 import { JobComment } from './job_comment.js';
+import { JobNote } from './job_note.js';
 import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
 
@@ -41,7 +42,7 @@ export function Job() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'currency');
     addPropertyTo(this, 'quantity');
-    addPropertyTo(this, 'notes');
+    addPropertyTo(this, 'jobNotes', JobNote);
     addPropertyTo(this, 'jobType');
     addPropertyTo(this, 'product', Product);
     addPropertyTo(this, 'supplyChainRequestProduct', Product);
@@ -106,7 +107,6 @@ export function Job() {
     addPropertyTo(this, 'limitedStock');
     addPropertyTo(this, 'canDeduct');
 
-    addPropertyTo(this, 'productionNotes');
     addPropertyTo(this, "needsDrafting");
     addPropertyTo(this, "needsGroupBuy");
     addPropertyTo(this, "needsProduction");
