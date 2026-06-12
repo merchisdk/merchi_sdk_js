@@ -34,7 +34,7 @@ import { ComponentTag, ComponentTags } from './component_tag.js';
 import { Discount } from './discount.js';
 import { DiscountGroup } from './discount_group.js';
 import { Domain, Domains } from './domain.js';
-import { DomainTag, DomainTags } from './domain_tag.js';
+import { CompanyTag, CompanyTags } from './company_tag.js';
 import { DomainInvitation } from './domain_invitation.js';
 import { Draft, Drafts } from './draft.js';
 import { DraftPreview } from './draft_preview.js';
@@ -1050,8 +1050,8 @@ export function merchi(backendUri, websocketUri) {
             'components': new Components(),
             'ComponentTag': ComponentTag,
             'componentTags': new ComponentTags(),
-            'DomainTag': DomainTag,
-            'domainTags': new DomainTags(),
+            'CompanyTag': CompanyTag,
+            'companyTags': new CompanyTags(),
             'Product': Product,
             'products': new Products(),
             'ProductionComment': ProductionComment,

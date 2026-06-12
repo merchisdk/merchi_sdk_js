@@ -9,7 +9,7 @@ import { Component } from './component.js';
 import { Company } from './company.js';
 import { CountryTax } from './country_tax.js';
 import { DraftTemplate } from './draft_template.js';
-import { DomainTag } from './domain_tag.js';
+import { CompanyTag } from './company_tag.js';
 import { DiscountGroup } from './discount_group.js';
 import { Domain } from './domain.js';
 import { Inventory } from './inventory.js';
@@ -105,7 +105,7 @@ export function Product() {
     addPropertyTo(this, 'chainedInventoryHandlingUnitPrice');
     addPropertyTo(this, 'savedByUsers', User);
     addPropertyTo(this, 'savedByCompanies', Company);
-    addPropertyTo(this, 'tags', DomainTag);
+    addPropertyTo(this, 'tags', CompanyTag);
     addPropertyTo(this, 'inventories', Inventory);
     addPropertyTo(this, 'inventoriesOpen');
     addPropertyTo(this, 'discountGroups', DiscountGroup);

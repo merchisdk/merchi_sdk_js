@@ -17,7 +17,7 @@ import { MerchiFile } from './merchi_file.js';
 import { Draft } from './draft.js';
 import { DraftComment } from './draft_comment.js';
 import { Domain } from './domain.js';
-import { DomainTag } from './domain_tag.js';
+import { CompanyTag } from './company_tag.js';
 import { EmailAddress } from './email_address.js';
 import { Invoice } from './invoice.js';
 import { Notification } from './notification.js';
@@ -92,7 +92,7 @@ export function Job() {
     addPropertyTo(this, 'taxType', CountryTax);
     addPropertyTo(this, 'costPerUnit');
     addPropertyTo(this, 'automaticPriceEnabled');
-    addPropertyTo(this, 'tags', DomainTag);
+    addPropertyTo(this, 'tags', CompanyTag);
 
     // not embedded by default
     addPropertyTo(this, 'unreadNotificationsCount');
