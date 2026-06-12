@@ -5,7 +5,7 @@ import { removeObjectFromArrayWithIntegerValue } from './helpers.js';
 import { Address } from './address.js';
 import { Assignment } from './assignment.js';
 import { CountryTax } from './country_tax.js';
-import { DomainTag } from './domain_tag.js';
+import { CompanyTag } from './company_tag.js';
 import { User } from './user.js';
 import { Company } from './company.js';
 import { Invoice } from './invoice.js';
@@ -55,7 +55,7 @@ export function Shipment() {
     addPropertyTo(this, 'maxVolume');
     addPropertyTo(this, 'taxType', CountryTax);
     addPropertyTo(this, 'senderResponsible');
-    addPropertyTo(this, 'tags', DomainTag);
+    addPropertyTo(this, 'tags', CompanyTag);
     addPropertyTo(this, 'shipmentItems', ShipmentItem)
     addPropertyTo(this, 'shipmentMethod', ShipmentMethod);
     addPropertyTo(this, 'internalTags', InternalTag);
