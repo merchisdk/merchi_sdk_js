@@ -26,6 +26,7 @@ export function Notification() {
     addPropertyTo(this, 'relatedJob', Job);
     addPropertyTo(this, 'attachment', MerchiFile);
     addPropertyTo(this, 'seen');
+    addPropertyTo(this, 'emailOpenedAt');
     addPropertyTo(this, 'htmlMessage');
     addPropertyTo(this, 'description');
     addPropertyTo(this, 'urgency');
