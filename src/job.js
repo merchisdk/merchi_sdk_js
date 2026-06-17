@@ -30,6 +30,7 @@ import { VariationsGroup } from './variations_group.js';
 import { Item } from './item.js';
 import { JobComment } from './job_comment.js';
 import { JobNote } from './job_note.js';
+import { JobOperationLog } from './job_operation_log.js';
 import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
 
@@ -43,6 +44,7 @@ export function Job() {
     addPropertyTo(this, 'currency');
     addPropertyTo(this, 'quantity');
     addPropertyTo(this, 'jobNotes', JobNote);
+    addPropertyTo(this, 'operationLogs', JobOperationLog);
     addPropertyTo(this, 'jobType');
     addPropertyTo(this, 'product', Product);
     addPropertyTo(this, 'supplyChainRequestProduct', Product);
