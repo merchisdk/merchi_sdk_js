@@ -54,6 +54,7 @@ import { Invoice, Invoices } from './invoice.js';
 import { Job, Jobs } from './job.js';
 import { JobComment } from './job_comment.js';
 import { JobNote } from './job_note.js';
+import { JobOperationLog, JobOperationLogs } from './job_operation_log.js';
 import { MerchiFile, MerchiFiles } from './merchi_file.js';
 import { Menu } from './menu.js';
 import { MenuItem } from './menu_item.js';
@@ -1067,6 +1068,8 @@ export function merchi(backendUri, websocketUri) {
             'jobs': new Jobs(),
             'JobComment': JobComment,
             'JobNote': JobNote,
+            'JobOperationLog': JobOperationLog,
+            'jobOperationLogs': new JobOperationLogs(),
             'Cart': Cart,
             'CartItem': CartItem,
             'Bank': Bank,

@@ -18,6 +18,7 @@ import { UserCompany } from './user_company.js';
 import { Reminder } from './reminder.js';
 import { InternalTag } from './internal_tag.js';
 import { DomainTag } from './domain_tag.js';
+import { JobOperationLog } from './job_operation_log.js';
 
 export function User() {
     this.resource = '/users';
@@ -62,6 +63,7 @@ export function User() {
     addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);
+    addPropertyTo(this, 'jobOperationLogs', JobOperationLog);
 
     this.create = function (success, error, embed, as_domain) {
         var self = this,
