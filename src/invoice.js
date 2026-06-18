@@ -6,7 +6,7 @@ import { isUndefinedOrNull } from './helpers.js';
 import { Address } from './address.js';
 import { EmailAddress } from './email_address.js';
 import { Domain } from './domain.js';
-import { DomainTag } from './domain_tag.js';
+import { CompanyTag } from './company_tag.js';
 import { Item } from './item.js';
 import { Company } from './company.js';
 import { PhoneNumber } from './phone_number.js';
@@ -60,7 +60,7 @@ export function Invoice() {
     addPropertyTo(this, 'acceptUtrust');
     addPropertyTo(this, 'acceptBankTransfer');
     addPropertyTo(this, 'acceptPhonePayment');
-    addPropertyTo(this, 'tags', DomainTag);
+    addPropertyTo(this, 'tags', CompanyTag);
     addPropertyTo(this, 'reminderMessage');
     addPropertyTo(this, 'reminded');
     addPropertyTo(this, 'isRemindable');

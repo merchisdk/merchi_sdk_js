@@ -5,7 +5,6 @@ import { addPropertyTo, serialise, fromJson, getList, fromJsonList, patchOne,
 import { SELLER, SELLER_PLUS, SUPPLIER, RESTRICTED_SUPPLIER } from './roles.js';
 import { domainTypesInts } from './domain_types.js';
 import { Company } from './company.js';
-import { DomainTag } from './domain_tag.js';
 import { DomainInvitation } from './domain_invitation.js';
 import { Theme } from './theme.js';
 import { MerchiFile } from './merchi_file.js';
@@ -82,7 +81,6 @@ export function Domain() {
     addPropertyTo(this, 'supplyProducts', SupplyDomain);
     addPropertyTo(this, 'domainInvitations', DomainInvitation);
     addPropertyTo(this, 'jobsAssignees', User);
-    addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);
 
