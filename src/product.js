@@ -108,6 +108,7 @@ export function Product() {
     addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'inventories', Inventory);
     addPropertyTo(this, 'inventoriesOpen');
+    addPropertyTo(this, 'clientSideCalculation');
     addPropertyTo(this, 'discountGroups', DiscountGroup);
     addPropertyTo(this, 'categories', Category);
     addPropertyTo(this, 'taxType', CountryTax);
