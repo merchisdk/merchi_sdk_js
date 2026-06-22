@@ -97,6 +97,12 @@ import {
     normalizeProductReviewApiJson,
     wireProductReviewCreateBody,
 } from './product_review.js';
+import * as pricing from './pricing/index.js';
+
+// Pure client-side pricing calculator (mirrors merchi_sdk_ts `pricing`):
+// estimateQuote, resolveVisibleFields, resolveVisibleOptionIds,
+// resolveUnavailableOptionIds, applyDiscount, roundHalfEven.
+export { pricing };
 
 export function merchi(backendUri, websocketUri) {
     getGlobal().merchiJsonpHandlers = {};
