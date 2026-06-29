@@ -13,6 +13,8 @@ export function AgentConversation() {
     addPropertyTo(this, 'conversationId');
     addPropertyTo(this, 'initialPrompt');
     addPropertyTo(this, 'creationDate');
+    addPropertyTo(this, 'entityType');
+    addPropertyTo(this, 'entityId');
     addPropertyTo(this, 'serviceProvider');
     addPropertyTo(this, 'user', User);
     addPropertyTo(this, 'domain', Domain);

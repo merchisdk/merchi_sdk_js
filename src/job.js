@@ -110,6 +110,9 @@ export function Job() {
     addPropertyTo(this, 'canDeduct');
 
     addPropertyTo(this, "needsDrafting");
+    addPropertyTo(this, "assignToAgent");
+    addPropertyTo(this, "agentLastRunAt");
+    addPropertyTo(this, "agentNextCheckAt");
     addPropertyTo(this, "needsGroupBuy");
     addPropertyTo(this, "needsProduction");
     addPropertyTo(this, "needsShipping");

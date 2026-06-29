@@ -29,6 +29,7 @@ export function User() {
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'userType');
     addPropertyTo(this, 'registeredAsGuest');
+    addPropertyTo(this, 'isMerchiAgent');
     addPropertyTo(this, 'registeredUnderDomains', Domain);
     addPropertyTo(this, 'password');
     addPropertyTo(this, 'resetToken');
