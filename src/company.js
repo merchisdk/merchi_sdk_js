@@ -268,6 +268,54 @@ export function Company() {
         var logo = this.logo();
         return logo && logo.viewUrl() ? logo.viewUrl() : null;
     }
+
+    function sendAnalyticsRequest(resource, method, success, error, queryParams) {
+        var request = new Request();
+        request.resource(resource).method(method || 'GET');
+        if (queryParams) {
+            Object.keys(queryParams).forEach(function(key) {
+                var value = queryParams[key];
+                if (value !== undefined && value !== null && value !== '') {
+                    request.query().add(key, value);
+                }
+            });
+        }
+        function handleResponse(status, data) {
+            if (status >= 200 && status < 300) {
+                if (success) {
+                    success(data);
+                }
+            } else if (error) {
+                error(status, data);
+            }
+        }
+        request.responseHandler(handleResponse).errorHandler(handleResponse);
+        request.send();
+    }
+
+    this.getAnalytics = function (success, error) {
+        sendAnalyticsRequest(
+            '/companies/' + this.id() + '/analytics/',
+            'GET',
+            success,
+            error
+        );
+    };
+
+    this.getAgentTokenAnalytics = function (queryParams, success, error) {
+        if (typeof queryParams === 'function') {
+            error = success;
+            success = queryParams;
+            queryParams = null;
+        }
+        sendAnalyticsRequest(
+            '/companies/' + this.id() + '/agent_token_analytics/',
+            'GET',
+            success,
+            error,
+            queryParams
+        );
+    };
 }
 
 export function Companies() {

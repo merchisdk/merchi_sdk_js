@@ -791,6 +791,32 @@ export function Domain() {
             args.error
         );
     };
+
+    this.getAnalytics = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/analytics/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.getAgentTokenAnalytics = function (queryParams, success, error) {
+        if (typeof queryParams === 'function') {
+            error = success;
+            success = queryParams;
+            queryParams = null;
+        }
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/agent_token_analytics/',
+            'GET',
+            null,
+            success,
+            error,
+            queryParams
+        );
+    };
 }
 
 export function Domains() {
