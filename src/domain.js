@@ -74,6 +74,8 @@ export function Domain() {
     addPropertyTo(this, 'publicAccessRestricted');
     addPropertyTo(this, 'showDomainToAccessibleEntitiesOnly')
     addPropertyTo(this, 'enableNotifications');
+    addPropertyTo(this, 'assignToAgent');
+    addPropertyTo(this, 'merchiAgentUser', User);
     addPropertyTo(this, 'enableEmailNotifications');
     addPropertyTo(this, 'enableSmsNotifications');
     addPropertyTo(this, 'seoDomainPages', SeoDomainPage);
