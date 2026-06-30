@@ -38,6 +38,7 @@ export function Product() {
     addPropertyTo(this, 'country');
     addPropertyTo(this, 'currency');
     addPropertyTo(this, 'createdBy', User);
+    addPropertyTo(this, 'designer', User);
     addPropertyTo(this, 'updatedBy', User);
     addPropertyTo(this, 'independent');
     addPropertyTo(this, 'productType');
