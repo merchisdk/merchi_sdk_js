@@ -11,6 +11,7 @@ export function Category() {
 
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'name');
+    addPropertyTo(this, 'position');
     addPropertyTo(this, 'showDashboard');
     addPropertyTo(this, 'showPublic');
     addPropertyTo(this, 'showPublicSupplierResell');
