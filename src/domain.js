@@ -272,6 +272,15 @@ export function Domain() {
      */
 
     /**
+     * @typedef {Object} StorefrontGoogleIntegrations
+     * @property {string} [ga4MeasurementId]
+     * @property {string} [ga4PropertyId]
+     * @property {string} [googleAdsId]
+     * @property {string} [googleAdsConversionLabel]
+     * @property {string} [googleAdsQuoteConversionLabel]
+     */
+
+    /**
      * @typedef {Object} StorefrontV2Config
      * @property {number} [id]
      * @property {number} [domainId]
@@ -287,6 +296,7 @@ export function Domain() {
      * @property {string|null} [repoName]
      * @property {string|null} [vercelProjectId]
      * @property {string|null} [lastSuccessfulCommitSha]
+     * @property {StorefrontGoogleIntegrations|null} [googleIntegrations]
      * @property {Array<string>} [approvedStarterTemplates]
      * @property {string} [providerMode]
      */
@@ -595,6 +605,130 @@ export function Domain() {
         var args = parsePayloadAndCallbacks(success, error);
         sendStorefrontRequest(
             '/domains/' + this.id() + '/storefront_v2/reset/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.getStorefrontV2GoogleIntegrations = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/google_integrations/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    /**
+     * @param {{googleIntegrations?: StorefrontGoogleIntegrations}|StorefrontGoogleIntegrations|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.saveStorefrontV2GoogleIntegrations = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        var body = args.payload || {};
+        if (!body.googleIntegrations && !body.google_integrations) {
+            body = {googleIntegrations: body};
+        }
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/google_integrations/',
+            'POST',
+            body,
+            args.success,
+            args.error
+        );
+    };
+
+    this.getStorefrontV2GaStatus = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/ga/status/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    this.verifyStorefrontV2GaInstallation = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/ga/verify/',
+            'POST',
+            null,
+            success,
+            error
+        );
+    };
+
+    /**
+     * @param {{days?: number}|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.analyzeStorefrontV2Ga = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/ga/analyze/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {{recommendationIds: Array<string>, recommendations?: Array<Object>, narrative?: string, days?: number, startNewBranch?: boolean, branchName?: string}|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.applyStorefrontV2GaRecommendations = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/ga/apply/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    this.getStorefrontV2GscStatus = function (success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/gsc/status/',
+            'GET',
+            null,
+            success,
+            error
+        );
+    };
+
+    /**
+     * @param {{days?: number}|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.analyzeStorefrontV2Gsc = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/gsc/analyze/',
+            'POST',
+            args.payload,
+            args.success,
+            args.error
+        );
+    };
+
+    /**
+     * @param {{recommendationIds: Array<string>, recommendations?: Array<Object>, narrative?: string, days?: number, startNewBranch?: boolean, branchName?: string}|Function} payload
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.applyStorefrontV2GscRecommendations = function (payload, success, error) {
+        var args = parsePayloadAndCallbacks(payload, success, error);
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/gsc/apply/',
             'POST',
             args.payload,
             args.success,
