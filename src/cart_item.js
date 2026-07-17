@@ -3,7 +3,7 @@ import { addPropertyTo, serialise, fromJson, create,
      enumerateFiles } from './model.js';
 import { Cart } from './cart.js';
 import { CountryTax } from './country_tax.js';
-import { DomainTag } from './domain_tag.js';
+import { CompanyTag } from './company_tag.js';
 import { Draft } from './draft.js';
 import { Product } from './product.js';
 import { Variation } from './variation.js';
@@ -24,7 +24,7 @@ export function CartItem() {
     addPropertyTo(this, 'variations', Variation);
     addPropertyTo(this, 'variationsGroups', VariationsGroup);
     addPropertyTo(this, 'taxType', CountryTax);
-    addPropertyTo(this, 'tags', DomainTag);
+    addPropertyTo(this, 'tags', CompanyTag);
     addPropertyTo(this, 'ownDrafts', Draft);
     addPropertyTo(this, 'subtotalCost');
     addPropertyTo(this, 'totalCost');

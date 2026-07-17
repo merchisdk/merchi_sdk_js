@@ -3,7 +3,7 @@ import { addPropertyTo, create, serialise, enumerateFiles, getOne, getList,
     fromJson, deleteOne, fromJsonList, patchOne } from './model.js';
 import { isUndefinedOrNull } from './helpers.js';
 import { User } from './user.js';
-import { DomainTag } from './domain_tag.js';
+import { CompanyTag } from './company_tag.js';
 import { Job } from './job.js';
 import { Product } from './product.js';
 import { Invoice } from './invoice.js';
@@ -27,7 +27,7 @@ export function Reminder() {
     addPropertyTo(this, 'message');
     addPropertyTo(this, 'sendEmail');
     addPropertyTo(this, 'sendSms');
-    addPropertyTo(this, 'domainTags', DomainTag);
+    addPropertyTo(this, 'companyTags', CompanyTag);
     addPropertyTo(this, 'remindUsers', User);
     addPropertyTo(this, 'job', Job);
     addPropertyTo(this, 'product', Product);

@@ -1,12 +1,12 @@
 import { generateUUID } from './uuid.js';
 import { addPropertyTo, serialise, create, fromJson, patchOne, deleteOne,
     fromJsonList, getList, enumerateFiles, getOne } from './model.js';
-import { Domain } from './domain.js';
+import { Company } from './company.js';
 import { Product } from './product.js';
 
-export function DomainTag() {
-    this.resource = '/domain_tags';
-    this.json = 'domainTag';
+export function CompanyTag() {
+    this.resource = '/company_tags';
+    this.json = 'companyTag';
     this.temporaryId = generateUUID();
 
     addPropertyTo(this, 'id');
@@ -14,7 +14,7 @@ export function DomainTag() {
     addPropertyTo(this, 'description');
     addPropertyTo(this, 'colour');
     addPropertyTo(this, 'showPublic');
-    addPropertyTo(this, 'domain', Domain);
+    addPropertyTo(this, 'company', Company);
     addPropertyTo(this, 'products', Product);
 
     this.create = function (success, error, embed, domainId) {
@@ -64,10 +64,10 @@ export function DomainTag() {
     };
 }
 
-export function DomainTags() {
-    this.resource = '/domain_tags';
-    this.json = 'domainTags';
-    this.single = DomainTag;
+export function CompanyTags() {
+    this.resource = '/company_tags';
+    this.json = 'companyTags';
+    this.single = CompanyTag;
 
     this.get = function (success, error, parameters) {
         var self = this;
