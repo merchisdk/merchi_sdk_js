@@ -496,9 +496,6 @@ export function getList(resource, success, error, parameters, withUpdates) {
         request.query().add('company_supplier_id',
                             parameters.companySupplierId);
     }
-    if (notEmpty(parameters.componentId)) {
-        request.query().add('component_id', parameters.componentId);
-    }
     if (notEmpty(parameters.section)) {
         request.query().add('section', parameters.section);
     }
@@ -538,10 +535,6 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (notEmpty(parameters.exclude)) {
         request.query().add('exclude', parameters.exclude);
     }
-    if (notEmpty(parameters.excludeComponents)) {
-        request.query().add(
-            'exclude_components', parameters.excludeComponents);
-    }
     if (notEmpty(parameters.excludeDomains)) {
         request.query().add(
             'exclude_domains', parameters.excludeDomains);
@@ -559,10 +552,6 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (notEmpty(parameters.shopifyOnly)) {
         request.query().add('shopify_only',
                             parameters.shopifyOnly);
-    }
-    if (notEmpty(parameters.relatedComponent)) {
-        request.query().add('related_component',
-                            parameters.relatedComponent);
     }
     if (notEmpty(parameters.originalOf)) {
         request.query().add('original_of',

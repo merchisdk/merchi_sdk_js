@@ -5,7 +5,6 @@ import { addPropertyTo, getList, fromJsonList, deleteOne, patchOne, fromJson,
     serialise, getOne, create, enumerateFiles, Request } from './model.js';
 import { productTypesInts } from './product_types.js';
 import { Category } from './category.js';
-import { Component } from './component.js';
 import { Company } from './company.js';
 import { CountryTax } from './country_tax.js';
 import { DraftTemplate } from './draft_template.js';
@@ -21,7 +20,6 @@ import { MerchiFile } from './merchi_file.js';
 import { SupplyDomain } from './supply_domain.js';
 import { User } from './user.js';
 import { Job } from './job.js';
-import { SeoDomainPage } from './seo_domain_page.js';
 import { InternalTag } from './internal_tag.js';
 import { DraftPreview } from './draft_preview.js';
 import { Reminder } from './reminder.js';
@@ -78,7 +76,6 @@ export function Product() {
     addPropertyTo(this, 'chainedSellerProducts', Product);
     addPropertyTo(this, 'chainedInventorySupplierProduct', Product);
     addPropertyTo(this, 'chainedInventorySellerProducts', Product);
-    addPropertyTo(this, 'component', Component);
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'suppliedByDomains', SupplyDomain);
     addPropertyTo(this, 'autoAssignProductionOnAction');
@@ -118,7 +115,6 @@ export function Product() {
     addPropertyTo(this, 'draftPreviews', DraftPreview);
     addPropertyTo(this, 'draftTemplates', DraftTemplate);
     addPropertyTo(this, 'shipmentMethods', ShipmentMethod);
-    addPropertyTo(this, 'seoDomainPages', SeoDomainPage);
     addPropertyTo(this, 'aiContext');
     addPropertyTo(this, 'aiContextDrafting');
     addPropertyTo(this, 'internalUseNotes');

@@ -9,9 +9,7 @@ import { DomainTag } from './domain_tag.js';
 import { DomainInvitation } from './domain_invitation.js';
 import { Theme } from './theme.js';
 import { MerchiFile } from './merchi_file.js';
-import { Menu } from './menu.js';
 import { SupplyDomain } from './supply_domain.js';
-import { SeoDomainPage } from './seo_domain_page.js';
 import { DomainChatSettings } from './domain_chat_settings.js';
 import { User, Users } from './user.js';
 import { InternalTag } from './internal_tag.js';
@@ -53,7 +51,6 @@ export function Domain() {
     addPropertyTo(this, 'accessibleClientCompanies', Company);
     addPropertyTo(this, 'unltdAiApiOrganizationId');
     addPropertyTo(this, 'unltdAiApiSecretKey');
-    addPropertyTo(this, 'menus', Menu);
 
     addPropertyTo(this, 'socialBitchute');
     addPropertyTo(this, 'socialDiscord');
@@ -78,7 +75,6 @@ export function Domain() {
     addPropertyTo(this, 'merchiAgentUser', User);
     addPropertyTo(this, 'enableEmailNotifications');
     addPropertyTo(this, 'enableSmsNotifications');
-    addPropertyTo(this, 'seoDomainPages', SeoDomainPage);
     addPropertyTo(this, 'domainChatSettings', DomainChatSettings);
     addPropertyTo(this, 'themes', Theme);
     addPropertyTo(this, 'supplyProducts', SupplyDomain);
@@ -209,20 +205,6 @@ export function Domain() {
         this.patch(success, error,
                    serialise(this, undefined, undefined,
                              undefined, {excludeOld: true})[0], embed);
-    };
-
-    this.mainMenu = function () {
-       var menus = this.menus(),
-           i = 0;
-       if (menus === undefined) {
-           return null;
-       }
-       for (i = 0; i < menus.length; ++i) {
-           if (menus[i].menuType() === 0) {
-               return menus[i];
-           }
-       }
-       return null;
     };
 
     this.domainLogoUrl = function () {
