@@ -43,6 +43,7 @@ export function Product() {
     addPropertyTo(this, 'description');
     addPropertyTo(this, 'aiContextDrafting');
     addPropertyTo(this, 'notes');
+    addPropertyTo(this, 'position');
     addPropertyTo(this, 'spProductId');
     addPropertyTo(this, 'shopifyProductId');
     addPropertyTo(this, 'minimum');
