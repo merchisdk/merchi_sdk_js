@@ -29,8 +29,6 @@ import { CartItem } from './cart_item.js';
 import { CountryTax, CountryTaxes, NoTaxEntity } from './country_tax.js';
 import { Company, Companies } from './company.js';
 import { CompanyInvitation, CompanyInvitations } from './company_invitation.js';
-import { Component, Components } from './component.js';
-import { ComponentTag, ComponentTags } from './component_tag.js';
 import { Discount } from './discount.js';
 import { DiscountGroup } from './discount_group.js';
 import { Domain, Domains } from './domain.js';
@@ -56,9 +54,6 @@ import { JobComment } from './job_comment.js';
 import { JobNote } from './job_note.js';
 import { JobOperationLog, JobOperationLogs } from './job_operation_log.js';
 import { MerchiFile, MerchiFiles } from './merchi_file.js';
-import { Menu } from './menu.js';
-import { MenuItem } from './menu_item.js';
-import { Page } from './page.js';
 import { Payment } from './payment.js';
 import { Product, Products } from './product.js';
 import { ProductionComment } from './production_comment.js';
@@ -192,13 +187,8 @@ export function merchi(backendUri, websocketUri) {
         productTypesSeller = new Dictionary(),
         notificationAvatar = new Dictionary(),
         inventoryStatuses = new Dictionary(),
-        themeFoundation = new Dictionary(),
         inputTypes = new Dictionary(),
         fieldTypesString = new Dictionary(),
-        menuType = new Dictionary(),
-        menuTypeCodes = new Dictionary(),
-        menuItemType = new Dictionary(),
-        menuItemTypeCodes = new Dictionary(),
         currentUserEmbed = {'emailAddresses': {},
                             'profilePicture': {},
                             'userCompanies': {"company": {}},
@@ -250,11 +240,6 @@ export function merchi(backendUri, websocketUri) {
     fieldTypesString.add(1, "TEXT_INPUT");
     fieldTypesString.add(2, "SELECT");
 
-    themeFoundation.add("NO_FOUNDATION", 0);
-    themeFoundation.add("BOOTSTRAP_3", 1);
-    themeFoundation.add("BOOTSTRAP_4", 2);
-    themeFoundation.add("BOOTSTRAP_5", 3);
-
     shipmentCompanies.add(0, 'DHL');
     shipmentCompanies.add(1, 'UPS');
     shipmentCompanies.add(2, 'EMS');
@@ -302,21 +287,6 @@ export function merchi(backendUri, websocketUri) {
     itemTypes.add('custom', 0);
     itemTypes.add('shipping', 1);
     itemTypes.add('tax', 2);
-
-    menuType.add(0, 'Main menu');
-    menuType.add(1, 'Footer menu');
-    menuType.add(2, 'Other menu');
-
-    menuType.each(function (key, value) {
-        menuTypeCodes.add(value, parseInt(key, 10));
-    });
-
-    menuItemType.add(0, 'Redirect');
-    menuItemType.add(1, 'Internal');
-
-    menuItemType.each(function (key, value) {
-        menuItemTypeCodes.add(value, parseInt(key, 10));
-    });
 
     DEFAULT_RIGHTS = [rights.get("canAccess"),
                       rights.get("canEdit"),
@@ -1054,10 +1024,6 @@ export function merchi(backendUri, websocketUri) {
             'UserCompany': UserCompany,
             'Category': Category,
             'categories': new Categories(),
-            'Component': Component,
-            'components': new Components(),
-            'ComponentTag': ComponentTag,
-            'componentTags': new ComponentTags(),
             'DomainTag': DomainTag,
             'domainTags': new DomainTags(),
             'Product': Product,
@@ -1148,12 +1114,9 @@ export function merchi(backendUri, websocketUri) {
             'Variation': Variation,
             'VariationsGroup': VariationsGroup,
             'VariationFieldsOption': VariationFieldsOption,
-            'Menu': Menu,
-            'MenuItem': MenuItem,
             'notificationTypes': notificationTypes,
             'paymentTypes': paymentTypes,
             'paymentTypeIds': paymentTypeIds,
-            'Page': Page,
             'toUnix': toUnix,
             'id': id,
             'isUndefined': isUndefined,
@@ -1196,10 +1159,6 @@ export function merchi(backendUri, websocketUri) {
             'platformIcon': platformIcon,
             'defaultUserAvatar': defaultUserAvatar,
             'platformLogo': platformLogo,
-            'menuItemType': menuItemType,
-            'menuItemTypeCodes': menuItemTypeCodes,
-            'menuType': menuType,
-            'menuTypeCodes': menuTypeCodes,
             'checkUserInfo': checkUserInfo,
             'getJobQuote': getJobQuote,
             'removeObjectFromArrayWithIntegerValue': removeObjectFromArrayWithIntegerValue,
