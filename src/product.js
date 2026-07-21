@@ -49,6 +49,8 @@ export function Product() {
     addPropertyTo(this, 'minimum');
     addPropertyTo(this, 'defaultQuantity')
     addPropertyTo(this, 'minimumPrice')
+    addPropertyTo(this, 'setupPrice');
+    addPropertyTo(this, 'setupPerGroup');
     addPropertyTo(this, 'minimumPerGroup');
     addPropertyTo(this, 'deliveryDaysNormal');
     addPropertyTo(this, 'unitPrice');
