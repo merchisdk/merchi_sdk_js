@@ -72,6 +72,8 @@ export function Job() {
     addPropertyTo(this, 'clientBrowser');
     addPropertyTo(this, 'clientDevice');
     addPropertyTo(this, 'clientOs');
+    addPropertyTo(this, 'clientIp');
+    addPropertyTo(this, 'clientOrigin');
     addPropertyTo(this, 'clientEmail', EmailAddress);
     addPropertyTo(this, 'clientPhone', PhoneNumber);
     addPropertyTo(this, 'clientCompany', Company);
