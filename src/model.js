@@ -549,6 +549,12 @@ export function getList(resource, success, error, parameters, withUpdates) {
     if (notEmpty(parameters.orClientId)) {
         request.query().add('or_client_id', parameters.orClientId);
     }
+    if (notEmpty(parameters.orClientCompanyId)) {
+        var orClientCompanyId = Array.isArray(parameters.orClientCompanyId)
+            ? parameters.orClientCompanyId.join(',')
+            : parameters.orClientCompanyId;
+        request.query().add('or_client_company_id', orClientCompanyId);
+    }
     if (notEmpty(parameters.shopifyOnly)) {
         request.query().add('shopify_only',
                             parameters.shopifyOnly);
