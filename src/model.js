@@ -496,6 +496,10 @@ export function getList(resource, success, error, parameters, withUpdates) {
         request.query().add('company_supplier_id',
                             parameters.companySupplierId);
     }
+    if (notEmpty(parameters.senderCompanyId)) {
+        request.query().add('sender_company_id',
+                            parameters.senderCompanyId);
+    }
     if (notEmpty(parameters.section)) {
         request.query().add('section', parameters.section);
     }
