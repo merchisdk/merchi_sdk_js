@@ -14,3 +14,5 @@ fieldTypes.add("IMAGE_SELECT", 9);
 fieldTypes.add("COLOUR_PICKER", 10);
 fieldTypes.add("COLOUR_SELECT", 11);
 fieldTypes.add("TURNAROUND_TIME", 12);
+fieldTypes.add("COLOUR_EXTRACT", 13);
+fieldTypes.add("AREA", 14);
