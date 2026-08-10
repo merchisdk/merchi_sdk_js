@@ -61,6 +61,7 @@ export function VariationField() {
     addPropertyTo(this, 'widthFieldMax');
     addPropertyTo(this, 'areaUnit');
     addPropertyTo(this, 'areaInputType');
+    addPropertyTo(this, 'areaStep');
     addPropertyTo(this, 'aspectRatioLock');
     addPropertyTo(this, 'aspectRatio');
 
