@@ -47,6 +47,22 @@ export function VariationField() {
     addPropertyTo(this, 'isHtml');
     addPropertyTo(this, 'considerBusinessHours');
     addPropertyTo(this, 'shippingTimeIncluded');
+    addPropertyTo(this, 'heightVariationCost');
+    addPropertyTo(this, 'heightVariationCostDiscountGroup', DiscountGroup);
+    addPropertyTo(this, 'heightVariationUnitCost');
+    addPropertyTo(this, 'heightVariationUnitCostDiscountGroup', DiscountGroup);
+    addPropertyTo(this, 'widthVariationCost');
+    addPropertyTo(this, 'widthVariationCostDiscountGroup', DiscountGroup);
+    addPropertyTo(this, 'widthVariationUnitCost');
+    addPropertyTo(this, 'widthVariationUnitCostDiscountGroup', DiscountGroup);
+    addPropertyTo(this, 'heightFieldMin');
+    addPropertyTo(this, 'heightFieldMax');
+    addPropertyTo(this, 'widthFieldMin');
+    addPropertyTo(this, 'widthFieldMax');
+    addPropertyTo(this, 'areaUnit');
+    addPropertyTo(this, 'areaInputType');
+    addPropertyTo(this, 'aspectRatioLock');
+    addPropertyTo(this, 'aspectRatio');
 
     this.isType = function (typeString) {
         return parseInt(this.fieldType(), 10) ===
@@ -222,7 +238,10 @@ export function VariationField() {
             onceOffCost = 0,
             selectableOptions = [],
             sellerProductEditable = this.sellerProductEditable();
-        if (this.isSelectable()) {
+        if (this.isType('AREA')) {
+            variationBuilt.value(this.defaultValue());
+            variationBuilt.onceOffCost(0);
+        } else if (this.isSelectable()) {
             options = this.options();
             value = [];
             for (i = 0; i < options.length; i++) {
