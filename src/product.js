@@ -41,7 +41,6 @@ export function Product() {
     addPropertyTo(this, 'independent');
     addPropertyTo(this, 'productType');
     addPropertyTo(this, 'description');
-    addPropertyTo(this, 'aiContextDrafting');
     addPropertyTo(this, 'notes');
     addPropertyTo(this, 'position');
     addPropertyTo(this, 'spProductId');
@@ -117,7 +116,6 @@ export function Product() {
     addPropertyTo(this, 'draftTemplates', DraftTemplate);
     addPropertyTo(this, 'shipmentMethods', ShipmentMethod);
     addPropertyTo(this, 'aiContext');
-    addPropertyTo(this, 'aiContextDrafting');
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'groupsFirst');
