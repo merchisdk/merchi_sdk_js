@@ -676,6 +676,13 @@ export function serialise(obj, existing, prefix, files, options) {
                 property !== 'id') {
                 return;
             }
+            // JSON/JSONB columns (e.g. Domain.jobAgentPolicy) are plain objects.
+            // FormData stringifies objects as "[object Object]" unless we encode.
+            if (value !== null &&
+                typeof value === 'object' &&
+                !(typeof Blob !== 'undefined' && value instanceof Blob)) {
+                value = JSON.stringify(value);
+            }
             appendData(property, value);
         }
     });

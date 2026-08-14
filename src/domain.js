@@ -264,6 +264,19 @@ export function Domain() {
      */
 
     /**
+     * Public BYO connection status (never includes encrypted tokens).
+     * @typedef {Object} StorefrontV2ByoStatus
+     * @property {'platform'|'byo'} infrastructureMode
+     * @property {boolean} githubAppConfigured
+     * @property {boolean} vercelOauthConfigured
+     * @property {boolean} githubConnected
+     * @property {boolean} vercelConnected
+     * @property {string|null} [githubAccountLogin]
+     * @property {string|null} [githubInstallationId]
+     * @property {string|null} [vercelTeamId]
+     */
+
+    /**
      * @typedef {Object} StorefrontV2Config
      * @property {number} [id]
      * @property {number} [domainId]
@@ -278,6 +291,11 @@ export function Domain() {
      * @property {string|null} [repoOwner]
      * @property {string|null} [repoName]
      * @property {string|null} [vercelProjectId]
+     * @property {string|null} [vercelTeamId]
+     * @property {'platform'|'byo'|string|null} [infrastructureMode]
+     * @property {string|null} [githubInstallationId]
+     * @property {string|null} [githubAccountLogin]
+     * @property {StorefrontV2ByoStatus|null} [byo]
      * @property {string|null} [lastSuccessfulCommitSha]
      * @property {StorefrontGoogleIntegrations|null} [googleIntegrations]
      * @property {Array<string>} [approvedStarterTemplates]
