@@ -27,6 +27,8 @@ export function DraftTemplate() {
     addPropertyTo(this, 'customisationMap');
     addPropertyTo(this, 'customisationMapSource');
     addPropertyTo(this, 'customisationMapFileId');
+    addPropertyTo(this, 'printAreaMask', MerchiFile);
+    addPropertyTo(this, 'bodyColourMask', MerchiFile);
 
     this.create = function (options) {
         var data = serialise(this),
