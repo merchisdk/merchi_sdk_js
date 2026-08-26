@@ -116,6 +116,8 @@ export function Company() {
     addPropertyTo(this, 'internalUseAiContext');
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);
+    addPropertyTo(this, 'parentCompany', Company);
+    addPropertyTo(this, 'childCompanies', Company);
 
     this.create = function (success, error, embed, as_domain) {
         var data = serialise(this),
