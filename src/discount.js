@@ -1,5 +1,6 @@
 import { generateUUID } from './uuid.js';
 import { addPropertyTo } from './model.js';
+import { User } from './user.js';
 
 export function Discount() {
     this.resource = '/discounts';
@@ -13,6 +14,7 @@ export function Discount() {
     addPropertyTo(this, 'usageLimit');
     addPropertyTo(this, 'isPercentage');
     addPropertyTo(this, 'groupRestricted');
+    addPropertyTo(this, 'assignedUsers', User);
 
     this.discountedUnitCost = function (unitPrice) {
         var unitCost = unitPrice ? unitPrice : 0,
