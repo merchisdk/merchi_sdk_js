@@ -77,6 +77,7 @@ export function Job() {
     addPropertyTo(this, 'clientEmail', EmailAddress);
     addPropertyTo(this, 'clientPhone', PhoneNumber);
     addPropertyTo(this, 'clientCompany', Company);
+    addPropertyTo(this, 'notificationSubscribers', User);
     addPropertyTo(this, 'clientCompanyEmail', EmailAddress);
     addPropertyTo(this, 'clientCompanyPhone', PhoneNumber);
 
