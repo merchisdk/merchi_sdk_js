@@ -395,9 +395,18 @@ export function Domain() {
      */
 
     /**
+     * @typedef {Object} StorefrontV2ProductStatus
+     * @property {boolean} activated
+     * @property {boolean} [outOfSync]
+     * @property {number|null} [lastUpdated]
+     * @property {number|null} [lastDeployed]
+     */
+
+    /**
      * @typedef {Object} StorefrontV2ProductPublishPayload
      * @property {string} [productName]
      * @property {string} [productUrl]
+     * @property {number} [productId]
      * @property {string} [branchName]
      */
 
@@ -894,6 +903,22 @@ export function Domain() {
             args.payload,
             args.success,
             args.error
+        );
+    };
+
+    /**
+     * @param {number} productId
+     * @param {Function} [success]
+     * @param {Function} [error]
+     */
+    this.getStorefrontV2ProductStatus = function (productId, success, error) {
+        sendStorefrontRequest(
+            '/domains/' + this.id() + '/storefront_v2/products/' +
+                productId + '/status/',
+            'GET',
+            null,
+            success,
+            error
         );
     };
 
