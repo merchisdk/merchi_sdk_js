@@ -33,6 +33,7 @@ export function Product() {
     addPropertyTo(this, 'name');
     addPropertyTo(this, 'created');
     addPropertyTo(this, 'updated');
+    addPropertyTo(this, 'storefrontLastDeployed');
     addPropertyTo(this, 'country');
     addPropertyTo(this, 'currency');
     addPropertyTo(this, 'createdBy', User);
