@@ -17,10 +17,12 @@ export const showDomainAvatarArray =
              'READY_FOR_SHIPPING', 'SIGN_UP_CONFIRMATION', 'CRASH_EVENT',
              'MANAGER_SUMMARY', 'PASSWORD_RESET', 'MANAGER_REASSIGNED',
              'EMAIL_RESPONSE', 'SHIPMENT_EXPECTED_DATE_PAST',
-             'DOMAIN_INVITATION', 'MOD_SELLER_SUMMARY', 'MOD_SUPPLIER_SUMMARY'];
+             'DOMAIN_INVITATION', 'MOD_SELLER_SUMMARY', 'MOD_SUPPLIER_SUMMARY',
+             'REFERRER_ASSIGNED', 'REFERRER_JOB_RECEIVED'];
 
 export const showUserOrDomainAvatarArray =
             ['JOB_PAID', 'INVOICE_PAID', 'PAYMENT_ACCEPTED',
+             'REFERRER_JOB_PAID',
              'AUTOMATIC_JOB_RESPONSE', 'JOB_NOTIFICATION', 'JOB_REMINDER',
              'GENERAL_REMINDER', 'INVOICE_EMAIL_RESPONSE',
              'AUTOMATIC_INVOICE_RESPONSE', 'JOB_ADDED_TO_SHIPMENT',
@@ -107,6 +109,9 @@ notificationTypes.add("STORE_ASSIGNED_TO_YOU", 70);
 notificationTypes.add("CLIENT_STORE_CREATED", 71);
 notificationTypes.add("MOD_SELLER_SUMMARY", 72);
 notificationTypes.add("MOD_SUPPLIER_SUMMARY", 73);
+notificationTypes.add("REFERRER_ASSIGNED", 105);
+notificationTypes.add("REFERRER_JOB_PAID", 106);
+notificationTypes.add("REFERRER_JOB_RECEIVED", 107);
 
 export const notificationTypesKeys = new Dictionary();
 

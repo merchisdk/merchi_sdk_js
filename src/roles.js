@@ -11,6 +11,7 @@ roles.add('client', 5);
 roles.add('manager', 6);
 roles.add('accountant', 7);
 roles.add('theme editor', 8);
+roles.add('referrer', 9);
 
 export const systemRoles = new Dictionary();
 systemRoles.add("Component builder", 1);
