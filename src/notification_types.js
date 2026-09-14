@@ -18,7 +18,7 @@ export const showDomainAvatarArray =
              'MANAGER_SUMMARY', 'PASSWORD_RESET', 'MANAGER_REASSIGNED',
              'EMAIL_RESPONSE', 'SHIPMENT_EXPECTED_DATE_PAST',
              'DOMAIN_INVITATION', 'MOD_SELLER_SUMMARY', 'MOD_SUPPLIER_SUMMARY',
-             'REFERRER_ASSIGNED'];
+             'REFERRER_ASSIGNED', 'REFERRER_JOB_RECEIVED'];
 
 export const showUserOrDomainAvatarArray =
             ['JOB_PAID', 'INVOICE_PAID', 'PAYMENT_ACCEPTED',
@@ -111,6 +111,7 @@ notificationTypes.add("MOD_SELLER_SUMMARY", 72);
 notificationTypes.add("MOD_SUPPLIER_SUMMARY", 73);
 notificationTypes.add("REFERRER_ASSIGNED", 105);
 notificationTypes.add("REFERRER_JOB_PAID", 106);
+notificationTypes.add("REFERRER_JOB_RECEIVED", 107);
 
 export const notificationTypesKeys = new Dictionary();
 
