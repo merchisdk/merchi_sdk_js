@@ -347,6 +347,10 @@ export function getList(resource, success, error, parameters, withUpdates) {
         request.query().add('public_only',
                             JSON.stringify(parameters.publicOnly));
     }
+    if (parameters.isDraft !== undefined && parameters.isDraft !== null) {
+        request.query().add('is_draft',
+                            JSON.stringify(parameters.isDraft));
+    }
     if (parameters.isPrivate) {
         request.query().add('is_private',
                             JSON.stringify(parameters.isPrivate));
