@@ -24,6 +24,7 @@ export function Domain() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'aiContext');
     addPropertyTo(this, 'apiSecret');
+    addPropertyTo(this, 'apiAllowedOrigins');
     addPropertyTo(this, 'webflowApiKey');
     addPropertyTo(this, 'shopifyShopUrl');
     addPropertyTo(this, 'shopifyIsActive');
