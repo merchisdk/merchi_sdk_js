@@ -31,6 +31,7 @@ export function Invoice() {
     addPropertyTo(this, 'sendSms');
     addPropertyTo(this, 'sendEmail');
     addPropertyTo(this, 'unpaid');
+    addPropertyTo(this, 'isTest');
     addPropertyTo(this, 'totalCost');
     addPropertyTo(this, 'subtotalCost');
     addPropertyTo(this, 'taxAmount');

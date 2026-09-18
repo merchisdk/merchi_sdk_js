@@ -148,6 +148,7 @@ export function Job() {
     addPropertyTo(this, 'shopifyOrderLineItemId');
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'isNewClient');
+    addPropertyTo(this, 'isTest');
 
     this.create = function (
         success, error, embed, asDomain, withRights) {
