@@ -42,6 +42,7 @@ export function Cart() {
     addPropertyTo(this, 'invoice', Invoice);
     addPropertyTo(this, 'shipment', Shipment);
     addPropertyTo(this, 'receiverAddress', Address);
+    addPropertyTo(this, 'isTest');
 
     this.create = function (success, error, embed, asDomain) {
         var self = this,
