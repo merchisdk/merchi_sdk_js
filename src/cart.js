@@ -43,6 +43,15 @@ export function Cart() {
     addPropertyTo(this, 'shipment', Shipment);
     addPropertyTo(this, 'receiverAddress', Address);
     addPropertyTo(this, 'isTest');
+    addPropertyTo(this, 'sourceChannel');
+    addPropertyTo(this, 'utmSource');
+    addPropertyTo(this, 'utmMedium');
+    addPropertyTo(this, 'utmCampaign');
+    addPropertyTo(this, 'utmContent');
+    addPropertyTo(this, 'utmTerm');
+    addPropertyTo(this, 'sourceClickId');
+    addPropertyTo(this, 'sourceLanding');
+    addPropertyTo(this, 'sourceReferrer');
 
     this.create = function (success, error, embed, asDomain) {
         var self = this,

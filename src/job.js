@@ -74,6 +74,15 @@ export function Job() {
     addPropertyTo(this, 'clientOs');
     addPropertyTo(this, 'clientIp');
     addPropertyTo(this, 'clientOrigin');
+    addPropertyTo(this, 'sourceChannel');
+    addPropertyTo(this, 'utmSource');
+    addPropertyTo(this, 'utmMedium');
+    addPropertyTo(this, 'utmCampaign');
+    addPropertyTo(this, 'utmContent');
+    addPropertyTo(this, 'utmTerm');
+    addPropertyTo(this, 'sourceClickId');
+    addPropertyTo(this, 'sourceLanding');
+    addPropertyTo(this, 'sourceReferrer');
     addPropertyTo(this, 'clientEmail', EmailAddress);
     addPropertyTo(this, 'clientPhone', PhoneNumber);
     addPropertyTo(this, 'clientCompany', Company);
