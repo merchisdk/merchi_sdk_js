@@ -4,6 +4,7 @@ import { addPropertyTo, fromJson, getOne, fromJsonList,
 import { QuoteItem } from './quote_item.js';
 import { Assignment } from './assignment.js';
 import { Invoice } from './invoice.js';
+import { MerchiFile } from './merchi_file.js';
 
 export function Quote() {
     this.resource = '/quotes';
@@ -13,6 +14,7 @@ export function Quote() {
     addPropertyTo(this, 'id');
     addPropertyTo(this, 'agreedDeadline');
     addPropertyTo(this, 'quoteItems', QuoteItem);
+    addPropertyTo(this, 'files', MerchiFile);
     addPropertyTo(this, 'assignments', Assignment);
     addPropertyTo(this, 'currency');
     addPropertyTo(this, 'invoice', Invoice);
