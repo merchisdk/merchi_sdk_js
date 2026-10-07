@@ -83,6 +83,7 @@ export function Job() {
     addPropertyTo(this, 'sourceClickId');
     addPropertyTo(this, 'sourceLanding');
     addPropertyTo(this, 'sourceReferrer');
+    addPropertyTo(this, 'checkoutType');
     addPropertyTo(this, 'clientEmail', EmailAddress);
     addPropertyTo(this, 'clientPhone', PhoneNumber);
     addPropertyTo(this, 'clientCompany', Company);
