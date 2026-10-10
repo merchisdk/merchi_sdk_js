@@ -32,6 +32,7 @@ export function VariationField() {
     addPropertyTo(this, 'options', VariationFieldsOption);
     addPropertyTo(this, 'defaultOptions', VariationFieldsOption);
     addPropertyTo(this, 'multipleSelect');
+    addPropertyTo(this, 'allowAllPantones');
     addPropertyTo(this, 'rows');
     addPropertyTo(this, 'fieldMin');
     addPropertyTo(this, 'fieldMax');
@@ -122,10 +123,17 @@ export function VariationField() {
         return this.isType('COLOUR_SELECT');
     };
 
+    this.isPantoneSelectType = function () {
+        return this.isType('PANTONE_COLOUR_SELECT');
+    };
+
     this.isImageSelectType = function () {
         return this.isType('IMAGE_SELECT');
     };
    this.isSelectable = function () {
+        if (this.isPantoneSelectType()) {
+            return !this.allowAllPantones();
+        }
         return this.isSelectType() || this.isCheckboxOrRadio() ||
             this.isImageSelectType() || this.isColourSelectType();
     };
