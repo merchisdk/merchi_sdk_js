@@ -2,7 +2,9 @@ import { generateUUID } from './uuid.js';
 import { addPropertyTo, fromJson, serialise, create, enumerateFiles,
     getOne, deleteOne, fromJsonList, getList } from './model.js';
 import { Domain } from './domain.js';
+import { DomainTag } from './domain_tag.js';
 import { MerchiFile } from './merchi_file.js';
+import { User } from './user.js';
 
 export function Category() {
     this.resource = '/categories';
@@ -22,6 +24,8 @@ export function Category() {
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'subcategories', Category);
     addPropertyTo(this, 'parent', Category);
+    addPropertyTo(this, 'tags', DomainTag);
+    addPropertyTo(this, 'assigned', User);
 
     this.create = function (success, error, embed, domainId) {
         var data = serialise(this),
