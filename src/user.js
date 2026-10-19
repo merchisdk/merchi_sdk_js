@@ -10,6 +10,7 @@ import { Address } from './address.js';
 import { EmailAddress } from './email_address.js';
 import { EnrolledDomain } from './enrolled_domain.js';
 import { PhoneNumber } from './phone_number.js';
+import { Category } from './category.js';
 import { Product } from './product.js';
 import { Domain } from './domain.js';
 import { MerchiFile } from './merchi_file.js';
@@ -61,6 +62,7 @@ export function User() {
     addPropertyTo(this, 'aiContext');
     addPropertyTo(this, 'internalUseNotes');
     addPropertyTo(this, 'internalUseAiContext');
+    addPropertyTo(this, 'assignedCategories', Category);
     addPropertyTo(this, 'tags', DomainTag);
     addPropertyTo(this, 'internalTags', InternalTag);
     addPropertyTo(this, 'reminders', Reminder);

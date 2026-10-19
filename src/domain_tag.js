@@ -1,6 +1,7 @@
 import { generateUUID } from './uuid.js';
 import { addPropertyTo, serialise, create, fromJson, patchOne, deleteOne,
     fromJsonList, getList, enumerateFiles, getOne } from './model.js';
+import { Category } from './category.js';
 import { Domain } from './domain.js';
 import { Product } from './product.js';
 
@@ -16,6 +17,7 @@ export function DomainTag() {
     addPropertyTo(this, 'showPublic');
     addPropertyTo(this, 'domain', Domain);
     addPropertyTo(this, 'products', Product);
+    addPropertyTo(this, 'categories', Category);
 
     this.create = function (success, error, embed, domainId) {
         var data = serialise(this),
